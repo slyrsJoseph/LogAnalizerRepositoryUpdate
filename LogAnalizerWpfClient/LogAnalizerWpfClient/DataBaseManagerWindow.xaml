@@ -1,0 +1,71 @@
+<Window x:Class="LogAnalizerWpfClient.DatabaseManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Database Manager" Height="300" Width="400"
+        WindowStartupLocation="CenterScreen"
+        Background="#1A1A1A"
+        WindowStyle="None" AllowsTransparency="True">
+
+    <Window.Resources>
+        <Style x:Key="TechnoButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#000000" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="6,2" />
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="BorderBrush" Value="#00FFFF" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="6" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#00FFFF" />
+                    <Setter Property="Foreground" Value="#000000" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Border Background="#1A1A1A" CornerRadius="10" BorderBrush="#00FFFF" BorderThickness="2" Padding="10" MouseDown="Border_MouseDown">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Row="0" Margin="0,0,0,10">
+                <TextBlock Text="Available Databases:" Foreground="#00FFFF" FontWeight="Bold" Margin="0,0,0,5"/>
+                <ComboBox x:Name="comboDatabases" Background="#000000" Foreground="Black" BorderBrush="#00FFFF" BorderThickness="2"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,10,0,10">
+                <TextBlock Text="New Database Name:" Foreground="#00FFFF" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtNewDatabase" Background="#000000" Foreground="#00FFFF" BorderBrush="#00FFFF" BorderThickness="2"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <Button Content="Add" Width="80" Click="btnAdd_Click" Style="{StaticResource TechnoButtonStyle}"/>
+                <Button Content="Use" Width="80" Click="btnUse_Click" Style="{StaticResource TechnoButtonStyle}"/>
+                <Button Content="Remove" Width="80" Click="btnRemove_Click" Style="{StaticResource TechnoButtonStyle}"/>
+              
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <Button Content="Back" Width="100" Click="btnBack_Click" Style="{StaticResource TechnoButtonStyle}"/>
+            </StackPanel>
+        </Grid>
+    
+    </Border>
+    
+</Window>

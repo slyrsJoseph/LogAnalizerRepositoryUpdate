@@ -1,0 +1,112 @@
+<Window x:Class="LogAnalizerWpfClient.TableDateTimeComparisonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Table View (Log Browser)" Height="600" Width="1024"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True" Background="#1A1A1A" ResizeMode="CanResizeWithGrip">
+
+    <Window.Resources>
+        <Style x:Key="TechnoButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="#00FFFF"/>
+            <Setter Property="Background" Value="#1A1A1A"/>
+            <Setter Property="BorderBrush" Value="#00FFFF"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="2"
+                                CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#003333"/>
+                                <Setter Property="BorderBrush" Value="#00CED1"/>
+                                <Setter Property="Foreground" Value="#00CED1"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="#444"/>
+                                <Setter Property="BorderBrush" Value="#444"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="DataGridHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#1A1A1A"/>
+            <Setter Property="Foreground" Value="#00FFFF"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderBrush" Value="#00FFFF"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <Border BorderBrush="Cyan" BorderThickness="2" CornerRadius="10" Padding="5" Background="#1A1A1A">
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" /> 
+                <RowDefinition Height="Auto" /> 
+                <RowDefinition Height="*" />   
+                <RowDefinition Height="Auto" /> 
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0" Background="#1A1A1A" MouseDown="TitleBar_MouseDown">
+                <TextBlock Text="📊 Alarm Log Table Viewer" Foreground="#00FFFF" FontWeight="Bold" FontSize="14"
+                           VerticalAlignment="Center" Margin="10,0,0,0" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Width="40" Height="30" Background="#1A1A1A" BorderBrush="#00FFFF" Foreground="#00FFFF"
+                            FontWeight="Bold" Click="Minimize_Click" Margin="5">
+                        <TextBlock Text="_" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Button>
+                    <Button Width="40" Height="30" Background="#1A1A1A" BorderBrush="#00FFFF" Foreground="#00FFFF"
+                            FontWeight="Bold" Click="MaximizeRestore_Click">
+                        <TextBlock Text="❐" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Button>
+                    <Button Width="40" Height="30" Background="#1A1A1A" BorderBrush="#FF4B4B" Foreground="#FF4B4B"
+                            FontWeight="Bold" Click="Close_Click" Margin="5">
+                        <TextBlock Text="✕" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Button>
+                </StackPanel>
+            </DockPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,10,0,10">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                    <TextBlock Text="Select week:" Foreground="#00FFFF" Width="200"/>
+                    <ComboBox x:Name="comboWeek" Width="150" SelectionChanged="comboWeek_SelectionChanged" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                    <TextBlock Text="Select equipment:" Foreground="#00FFFF" Width="200"/>
+                    <ComboBox x:Name="comboEquipment" Width="150" SelectionChanged="comboEquipment_SelectionChanged" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox x:Name="checkFilter" Content="Apply filtering (FinalState = G, Allowed AlarmClass)"
+                              Foreground="#00FFFF" Checked="checkFilter_Checked" Unchecked="checkFilter_Checked" />
+                </StackPanel>
+            </StackPanel>
+
+            <DataGrid x:Name="dataGridLogs"
+                      Grid.Row="2"
+                      AutoGenerateColumns="True"
+                      Background="#1A1A1A"
+                      Foreground="White"
+                      AlternatingRowBackground="#2A2A2A"
+                      RowBackground="#1A1A1A"
+                      BorderBrush="#00FFFF"
+                      BorderThickness="1"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="All"
+                      ColumnHeaderStyle="{StaticResource DataGridHeaderStyle}"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <Button Content="Back" Width="100" Click="btnBack_Click" Style="{StaticResource TechnoButtonStyle}" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

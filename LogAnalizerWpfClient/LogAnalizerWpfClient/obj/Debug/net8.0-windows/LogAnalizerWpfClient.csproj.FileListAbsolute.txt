@@ -1,0 +1,344 @@
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.csproj.AssemblyReference.cache
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient_MarkupCompile.cache
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.exe
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.deps.json
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.runtimeconfig.json
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.pdb
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerShared.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerShared.pdb
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.g.resources
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.AssemblyInfoInputs.cache
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.AssemblyInfo.cs
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.csproj.CoreCompileInputs.cache
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnali.F0DF0D05.Up2Date
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\refint\LogAnalizerWpfClient.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.pdb
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.genruntimeconfig.cache
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ref\LogAnalizerWpfClient.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\HarfBuzzSharp.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.SkiaSharpView.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.SkiaSharpView.WPF.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\OpenTK.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\GLWpfControl.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.HarfBuzz.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.Views.WPF.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartWindow.baml
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartWindow.g.cs
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\SplashWindow.baml
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\SplashWindow.g.cs
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DataBaseManagerWindow.baml
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DataBaseManagerWindow.g.cs
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DateTimeComparisonWindow.baml
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DateTimeComparisonWindow.g.cs
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartDateTimeComparisonWindow.baml
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartDateTimeComparisonWindow.g.cs
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\WeekByWeekComparisonWindow.g.cs
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\WeekByWeekComparisonWindow.baml
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\TableDateTimeComparisonWindow.baml
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\TableDateTimeComparisonWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.exe
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.deps.json
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.runtimeconfig.json
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.pdb
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\HarfBuzzSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.SkiaSharpView.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.SkiaSharpView.WPF.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\OpenTK.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\GLWpfControl.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.HarfBuzz.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.Views.WPF.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerShared.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerShared.pdb
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.csproj.AssemblyReference.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartDateTimeComparisonWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DataBaseManagerWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DateTimeComparisonWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\MainWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\SplashWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\TableDateTimeComparisonWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\WeekByWeekComparisonWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartDateTimeComparisonWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DataBaseManagerWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DateTimeComparisonWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\SplashWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\TableDateTimeComparisonWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\WeekByWeekComparisonWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\App.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient_MarkupCompile.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.g.resources
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.GeneratedMSBuildEditorConfig.editorconfig
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.AssemblyInfoInputs.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.AssemblyInfo.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.csproj.CoreCompileInputs.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnali.F0DF0D05.Up2Date
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\refint\LogAnalizerWpfClient.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.pdb
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.genruntimeconfig.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ref\LogAnalizerWpfClient.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.exe
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.deps.json
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.runtimeconfig.json
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.pdb
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\HarfBuzzSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.SkiaSharpView.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.SkiaSharpView.WPF.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\OpenTK.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\GLWpfControl.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.HarfBuzz.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.Views.WPF.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerShared.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerShared.pdb
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.csproj.AssemblyReference.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartDateTimeComparisonWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DataBaseManagerWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DateTimeComparisonWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\MainWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\SplashWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\TableDateTimeComparisonWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\WeekByWeekComparisonWindow.baml
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartDateTimeComparisonWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DataBaseManagerWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DateTimeComparisonWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\SplashWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\TableDateTimeComparisonWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\WeekByWeekComparisonWindow.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\App.g.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient_MarkupCompile.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.g.resources
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.GeneratedMSBuildEditorConfig.editorconfig
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.AssemblyInfoInputs.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.AssemblyInfo.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.csproj.CoreCompileInputs.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnali.F0DF0D05.Up2Date
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\refint\LogAnalizerWpfClient.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.pdb
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.genruntimeconfig.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ref\LogAnalizerWpfClient.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\Images\Drilling-Solutions-scaled.jpeg
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient_Content.g.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.exe
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\Images\Drilling-Solutions-scaled.jpeg
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.deps.json
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.runtimeconfig.json
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.pdb
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\HarfBuzzSharp.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.SkiaSharpView.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.SkiaSharpView.WPF.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\OpenTK.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\GLWpfControl.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.HarfBuzz.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.Views.WPF.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerShared.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerShared.pdb
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.csproj.AssemblyReference.cache
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartDateTimeComparisonWindow.baml
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartWindow.baml
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DataBaseManagerWindow.baml
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DateTimeComparisonWindow.baml
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\SplashWindow.baml
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\TableDateTimeComparisonWindow.baml
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\WeekByWeekComparisonWindow.baml
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartDateTimeComparisonWindow.g.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartWindow.g.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DataBaseManagerWindow.g.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DateTimeComparisonWindow.g.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\SplashWindow.g.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\TableDateTimeComparisonWindow.g.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\WeekByWeekComparisonWindow.g.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient_Content.g.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient_MarkupCompile.cache
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.g.resources
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.AssemblyInfoInputs.cache
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.AssemblyInfo.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.csproj.CoreCompileInputs.cache
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnali.F0DF0D05.Up2Date
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\refint\LogAnalizerWpfClient.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.pdb
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.genruntimeconfig.cache
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ref\LogAnalizerWpfClient.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.exe
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\Images\Drilling-Solutions-scaled.jpeg
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.deps.json
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.runtimeconfig.json
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.pdb
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\HarfBuzzSharp.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.SkiaSharpView.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.SkiaSharpView.WPF.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\OpenTK.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\GLWpfControl.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.HarfBuzz.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.Views.WPF.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerShared.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerShared.pdb
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.csproj.AssemblyReference.cache
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartDateTimeComparisonWindow.baml
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartWindow.baml
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DataBaseManagerWindow.baml
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DateTimeComparisonWindow.baml
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\MainWindow.baml
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\SplashWindow.baml
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\TableDateTimeComparisonWindow.baml
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\WeekByWeekComparisonWindow.baml
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartDateTimeComparisonWindow.g.cs
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartWindow.g.cs
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DataBaseManagerWindow.g.cs
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DateTimeComparisonWindow.g.cs
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\SplashWindow.g.cs
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\TableDateTimeComparisonWindow.g.cs
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\WeekByWeekComparisonWindow.g.cs
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\App.g.cs
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient_Content.g.cs
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient_MarkupCompile.cache
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.g.resources
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.AssemblyInfoInputs.cache
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.AssemblyInfo.cs
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.csproj.CoreCompileInputs.cache
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnali.F0DF0D05.Up2Date
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\refint\LogAnalizerWpfClient.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.pdb
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.genruntimeconfig.cache
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ref\LogAnalizerWpfClient.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.csproj.AssemblyReference.cache
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartDateTimeComparisonWindow.baml
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartWindow.baml
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DataBaseManagerWindow.baml
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DateTimeComparisonWindow.baml
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\SplashWindow.baml
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\TableDateTimeComparisonWindow.baml
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\WeekByWeekComparisonWindow.baml
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartDateTimeComparisonWindow.g.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ChartWindow.g.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DataBaseManagerWindow.g.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\DateTimeComparisonWindow.g.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\SplashWindow.g.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\TableDateTimeComparisonWindow.g.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\WeekByWeekComparisonWindow.g.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient_MarkupCompile.cache
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.g.resources
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.AssemblyInfoInputs.cache
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.AssemblyInfo.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.csproj.CoreCompileInputs.cache
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.exe
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.deps.json
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.runtimeconfig.json
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerWpfClient.pdb
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\HarfBuzzSharp.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.SkiaSharpView.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LiveChartsCore.SkiaSharpView.WPF.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\OpenTK.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\GLWpfControl.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.HarfBuzz.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\SkiaSharp.Views.WPF.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerShared.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\LogAnalizerShared.pdb
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnali.F0DF0D05.Up2Date
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\refint\LogAnalizerWpfClient.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.pdb
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient.genruntimeconfig.cache
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ref\LogAnalizerWpfClient.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\Images\drilling-solutions-scaled.jpeg
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient_Content.g.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll

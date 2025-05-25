@@ -1,0 +1,71 @@
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.deps.json
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.pdb
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.AssemblyInfoInputs.cache
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.AssemblyInfo.cs
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.csproj.CoreCompileInputs.cache
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\refint\LogAnalizerShared.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.pdb
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\ref\LogAnalizerShared.dll
+C:\Users\JosephOne\RiderProjects\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.csproj.AssemblyReference.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.deps.json
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.pdb
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.csproj.AssemblyReference.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.GeneratedMSBuildEditorConfig.editorconfig
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.AssemblyInfoInputs.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.AssemblyInfo.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.csproj.CoreCompileInputs.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\refint\LogAnalizerShared.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.pdb
+D:\RiderProjects\ActualVersionLogAnalizer-main\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\ref\LogAnalizerShared.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.deps.json
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.pdb
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.csproj.AssemblyReference.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.GeneratedMSBuildEditorConfig.editorconfig
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.AssemblyInfoInputs.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.AssemblyInfo.cs
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.csproj.CoreCompileInputs.cache
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\refint\LogAnalizerShared.dll
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.pdb
+D:\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\ref\LogAnalizerShared.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.deps.json
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.pdb
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.csproj.AssemblyReference.cache
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.AssemblyInfoInputs.cache
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.AssemblyInfo.cs
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.csproj.CoreCompileInputs.cache
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\refint\LogAnalizerShared.dll
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.pdb
+C:\Users\Administrator.WIN-V68I3F9TL8C\RiderProjects\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\ref\LogAnalizerShared.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.deps.json
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.pdb
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.csproj.AssemblyReference.cache
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.GeneratedMSBuildEditorConfig.editorconfig
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.AssemblyInfoInputs.cache
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.AssemblyInfo.cs
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.csproj.CoreCompileInputs.cache
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\refint\LogAnalizerShared.dll
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.pdb
+C:\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\ref\LogAnalizerShared.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.deps.json
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\bin\Debug\net8.0\LogAnalizerShared.pdb
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.AssemblyInfoInputs.cache
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.AssemblyInfo.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.csproj.CoreCompileInputs.cache
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\refint\LogAnalizerShared.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\LogAnalizerShared.pdb
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerShared\obj\Debug\net8.0\ref\LogAnalizerShared.dll

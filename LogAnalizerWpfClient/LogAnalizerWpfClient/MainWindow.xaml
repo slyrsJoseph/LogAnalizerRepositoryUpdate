@@ -1,0 +1,101 @@
+﻿<Window x:Class="LogAnalizerWpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Alarm Log Analyzer"
+        Height="600" Width="1024"
+        WindowStartupLocation="CenterScreen"
+        Background="#1A1A1A"
+        WindowStyle="None"
+        AllowsTransparency="True">
+
+    <Window.Resources>
+        <Style x:Key="TechnoButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#000000" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="6,2" />
+            <Setter Property="Margin" Value="4" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="BorderBrush" Value="#00FFFF" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="6" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#00FFFF" />
+                    <Setter Property="Foreground" Value="#000000" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Border Background="#1A1A1A" CornerRadius="10" BorderBrush="#00FFFF" BorderThickness="2" Padding="10"  MouseDown="Border_MouseDown">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="DrillView Alarm Logs Analyzer"
+                       FontSize="20" FontWeight="Bold"
+                       Foreground="#00FFFF"
+                       HorizontalAlignment="Center"/>
+
+            <TextBlock Text="Select Database Mode:"
+                       Foreground="White" Margin="0,20,0,5"
+                       HorizontalAlignment="Center"/>
+            <ComboBox x:Name="comboDbMode" Width="200" SelectionChanged="comboDbMode_SelectionChanged">
+                <ComboBoxItem Content="SQL Server" />
+                <ComboBoxItem Content="SQLite" />
+            </ComboBox>
+
+            <StackPanel x:Name="sqlServerPanel" Margin="10">
+                <TextBlock Text="Authentication Mode:" Foreground="White" />
+                <ComboBox x:Name="comboAuthMode" Width="200" SelectionChanged="comboAuthMode_SelectionChanged">
+                    <ComboBoxItem Content="Trusted Connection" />
+                    <ComboBoxItem Content="SQL Authentication" />
+                </ComboBox>
+
+                <TextBlock Text="Enter Remote Server Name:" Foreground="White" />
+                <TextBox x:Name="txtServerName" Width="300" Height="28" Text="localhost\\Enter your SQL server name"
+                         Background="White" Margin="0,0,0,10"/>
+
+                <StackPanel x:Name="sqlAuthFields" Visibility="Collapsed">
+                    <TextBlock Text="Username:" Foreground="White" />
+                    <TextBox x:Name="txtLogin" Width="300" Margin="0,0,0,10"/>
+                    <TextBlock Text="Password:" Foreground="White" />
+                    <PasswordBox x:Name="txtPassword" Width="300" Margin="0,0,0,10"/>
+                </StackPanel>
+
+                <Button Content="Connect to Server"
+                        Width="200"
+                        Style="{StaticResource TechnoButtonStyle}"
+                        Click="btnConnect_Click"
+                        Margin="0,10"/>
+            </StackPanel>
+
+            <Button x:Name="btnManageDatabases"
+                    Content="Manage Databases"
+                    Width="240" Height="40"
+                    Click="btnManageDatabases_Click"
+                    IsEnabled="False"
+                    Style="{StaticResource TechnoButtonStyle}" />
+
+            <Button Content="📊 Compare week by week" Width="240" Height="40"
+                    Click="btnWeekComparison_Click"
+                    Style="{StaticResource TechnoButtonStyle}" />
+            <Button Content="📅 Compare by date ranges" Width="240" Height="40"
+                    Click="btnCompareByDateRange_Click"
+                    Style="{StaticResource TechnoButtonStyle}" />
+            <Button Content="Date range alarms table view"
+                    Width="240" Height="40"
+                    Click="btnOpenTableDateRange_Click"
+                    Style="{StaticResource TechnoButtonStyle}" />
+
+            <Button Content="❌ Exit" Width="240" Height="40" Click="Close_Click" Style="{StaticResource TechnoButtonStyle}"/>
+        </StackPanel>
+    </Border>
+</Window>

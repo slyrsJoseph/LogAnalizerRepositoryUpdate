@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "nzl89jkog30o3w7pvRw/Yjzb0Z5T4IVHwIb2Ynqz5OA=",
+  "Source": "LogAnalizerServer",
+  "BasePath": "_content/LogAnalizerServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

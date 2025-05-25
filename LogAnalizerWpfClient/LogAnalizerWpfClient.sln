@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogAnalizerWpfClient", "LogAnalizerWpfClient\LogAnalizerWpfClient.csproj", "{DA35DD18-F1D9-40B6-B236-9697E8ABF593}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogAnalizerShared", "LogAnalizerShared\LogAnalizerShared.csproj", "{73148B64-FACB-474B-912E-08C32E78CFAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA35DD18-F1D9-40B6-B236-9697E8ABF593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA35DD18-F1D9-40B6-B236-9697E8ABF593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA35DD18-F1D9-40B6-B236-9697E8ABF593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA35DD18-F1D9-40B6-B236-9697E8ABF593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73148B64-FACB-474B-912E-08C32E78CFAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73148B64-FACB-474B-912E-08C32E78CFAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73148B64-FACB-474B-912E-08C32E78CFAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73148B64-FACB-474B-912E-08C32E78CFAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
