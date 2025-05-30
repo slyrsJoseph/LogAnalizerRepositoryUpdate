@@ -15,10 +15,10 @@ public class LogApiClient
     private readonly HttpClient _httpClient;
   
     
+    public bool IsDatabaseSelected { get; private set; } = false;
     
-    
-    public bool IsAzureConnection =>
-        _httpClient.BaseAddress?.Host.EndsWith("database.windows.net") == true;
+    /*public bool IsAzureConnection =>
+        _httpClient.BaseAddress?.Host.EndsWith("database.windows.net") == true;*/
 
 
     public LogApiClient(HttpClient httpClient)
@@ -69,6 +69,7 @@ public class LogApiClient
     {
         var response = await _httpClient.PostAsync($"api/database/select?dbName={Uri.EscapeDataString(dbName)}", null);
         response.EnsureSuccessStatusCode();
+        IsDatabaseSelected = true;
     }
 
     public async Task DeleteDatabaseAsync(string dbName)
@@ -103,6 +104,7 @@ public class LogApiClient
         var payload = new { server, db, user, password };
         var response = await _httpClient.PostAsJsonAsync("api/database/select-sqlserver", payload);
         response.EnsureSuccessStatusCode();
+        IsDatabaseSelected = true;
     }
 
    
@@ -124,6 +126,7 @@ public class LogApiClient
         var payload = new SqliteRequest { FilePath = fileName };
         var response = await _httpClient.PostAsJsonAsync("api/database/select-sqlite", payload);
         response.EnsureSuccessStatusCode();
+        IsDatabaseSelected = true;
     }
     
     
@@ -157,7 +160,11 @@ public class LogApiClient
     }
     
    
-    
+    public async Task DeleteLogForWeekAsync(LogWeekType week)
+    {
+        var response = await _httpClient.DeleteAsync($"api/log/delete?weekType={week}");
+        response.EnsureSuccessStatusCode();
+    }
     
     
     

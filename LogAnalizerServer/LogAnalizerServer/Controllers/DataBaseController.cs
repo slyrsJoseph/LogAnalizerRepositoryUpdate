@@ -205,6 +205,8 @@ namespace LogAnalizerServer.Controllers
         }
         
         
+     
+        
 
         // ---------------- SQLITE ----------------
 
@@ -271,6 +273,7 @@ namespace LogAnalizerServer.Controllers
             }
         }
 
+        /*
         [HttpPost("delete-sqlite")]
         public IActionResult DeleteSqlite([FromBody] SqliteRequest request)
         {
@@ -290,7 +293,46 @@ namespace LogAnalizerServer.Controllers
             {
                 return StatusCode(500, $"SQLite deletion failed: {ex.Message}");
             }
+        }*/
+        
+        
+        [HttpPost("delete-sqlite")]
+        public IActionResult DeleteSqlite([FromBody] SqliteRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.FilePath))
+                return BadRequest("File path is required.");
+
+            try
+            {
+                // Получаем только имя файла (на случай, если пришёл полный путь)
+                var fileName = Path.GetFileName(request.FilePath);
+
+                // Собираем абсолютный путь на сервере
+                var fullPath = Path.Combine(_databaseFolder, fileName);
+
+                Console.WriteLine("[DELETE SQLITE] Request.FilePath: " + request.FilePath);
+                Console.WriteLine("[DELETE SQLITE] FileName: " + fileName);
+                Console.WriteLine("[DELETE SQLITE] Resolved full path: " + fullPath);
+
+                if (!System.IO.File.Exists(fullPath))
+                {
+                    Console.WriteLine("[DELETE SQLITE] File not found.");
+                    return NotFound($"File '{fileName}' does not exist.");
+                }
+
+                System.IO.File.Delete(fullPath);
+                Console.WriteLine("[DELETE SQLITE] File deleted.");
+
+                return Ok($"SQLite DB '{fileName}' deleted.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("[DELETE SQLITE] Exception: " + ex.Message);
+                return StatusCode(500, $"SQLite deletion failed: {ex.Message}");
+            }
         }
+        
+        
         
         
         [HttpPost("set-server-auth")]

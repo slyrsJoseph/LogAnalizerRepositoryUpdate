@@ -129,6 +129,18 @@
               "target": "Package",
               "version": "[2.0.0-rc5.4, )"
             },
+            "MaterialDesignColors": {
+              "target": "Package",
+              "version": "[5.2.2-ci998, )"
+            },
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[5.2.2-ci998, )"
+            },
+            "OxyPlot.Wpf": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "SkiaSharp": {
               "target": "Package",
               "version": "[3.116.1, )"

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OAvyaHoZGK4=",
+  "dgSpecHash": "UvsV40QoQsc=",
   "success": true,
   "projectFilePath": "C:\\Users\\JosephOne\\Desktop\\Razar ActualVersionLA\\ActualVersionLogAnalizer-main\\LogAnalizerWpfClient\\LogAnalizerWpfClient\\LogAnalizerWpfClient.csproj",
   "expectedPackageFiles": [
@@ -10,8 +10,14 @@
     "C:\\Users\\JosephOne\\.nuget\\packages\\livechartscore\\2.0.0-rc5.4\\livechartscore.2.0.0-rc5.4.nupkg.sha512",
     "C:\\Users\\JosephOne\\.nuget\\packages\\livechartscore.skiasharpview\\2.0.0-rc5.4\\livechartscore.skiasharpview.2.0.0-rc5.4.nupkg.sha512",
     "C:\\Users\\JosephOne\\.nuget\\packages\\livechartscore.skiasharpview.wpf\\2.0.0-rc5.4\\livechartscore.skiasharpview.wpf.2.0.0-rc5.4.nupkg.sha512",
+    "C:\\Users\\JosephOne\\.nuget\\packages\\materialdesigncolors\\5.2.2-ci998\\materialdesigncolors.5.2.2-ci998.nupkg.sha512",
+    "C:\\Users\\JosephOne\\.nuget\\packages\\materialdesignthemes\\5.2.2-ci998\\materialdesignthemes.5.2.2-ci998.nupkg.sha512",
+    "C:\\Users\\JosephOne\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
     "C:\\Users\\JosephOne\\.nuget\\packages\\opentk\\3.3.1\\opentk.3.3.1.nupkg.sha512",
     "C:\\Users\\JosephOne\\.nuget\\packages\\opentk.glwpfcontrol\\3.3.0\\opentk.glwpfcontrol.3.3.0.nupkg.sha512",
+    "C:\\Users\\JosephOne\\.nuget\\packages\\oxyplot.core\\2.1.0\\oxyplot.core.2.1.0.nupkg.sha512",
+    "C:\\Users\\JosephOne\\.nuget\\packages\\oxyplot.wpf\\2.1.0\\oxyplot.wpf.2.1.0.nupkg.sha512",
+    "C:\\Users\\JosephOne\\.nuget\\packages\\oxyplot.wpf.shared\\2.1.0\\oxyplot.wpf.shared.2.1.0.nupkg.sha512",
     "C:\\Users\\JosephOne\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\JosephOne\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\JosephOne\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

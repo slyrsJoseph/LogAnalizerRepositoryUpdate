@@ -9,7 +9,7 @@ using LogAnalizerShared;
 
 namespace LogAnalizerWpfClient
 {
-    public partial class TableDateTimeComparisonWindow : Window
+    public partial class TableDateTimeComparisonWindow  : MaterialDesignWindow
     {
         private readonly LogApiClient _apiClient;
         private List<AlarmlogClient> _allLogs = new();
@@ -123,6 +123,13 @@ namespace LogAnalizerWpfClient
             LoadFilteredLogs();
         }
         
+        
+        
+        protected override void OnContentRendered(EventArgs e)
+        {
+            base.OnContentRendered(e);
+            SelectedDbText.Text = $"Selected DB: {SelectedDatabaseState.CurrentDatabaseName}";
+        }
         
     }
 }

@@ -7,29 +7,31 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using LiveChartsCore;
-using LiveChartsCore.SkiaSharpView;
-using LiveChartsCore.SkiaSharpView.Painting;
-using SkiaSharp;
 using LogAnalizerShared;
 
-using LiveChartsCore.Kernel.Sketches;
-using LiveChartsCore;
-using LiveChartsCore.SkiaSharpView;
-using LiveChartsCore.SkiaSharpView.WPF;
-using LiveChartsCore.Kernel.Sketches;
-using LiveChartsCore.Drawing;
-using LiveChartsCore.Measure;
+
+using LogAnalizerWpfClient.CustomSeries;
+using OxyPlot;
+using OxyPlot.Annotations;
+using OxyPlot.Axes;
+using OxyPlot.Legends;
+//using OxyPlot.Series;
+using Axis = OxyPlot.Axes.Axis;
+
 namespace LogAnalizerWpfClient
+
+
+
 {
-    public partial class ChartWindow : Window
+    public partial class ChartWindow  :MaterialDesignWindow
     {
+        
         private readonly List<ComparisonResult> _results;
         private readonly LogWeekType _week1;
         private readonly LogWeekType _week2;
         private System.Timers.Timer _filterDelayTimer;
         
-        
+        public PlotModel PlotModel { get; private set; }
        
         
         
@@ -119,7 +121,7 @@ namespace LogAnalizerWpfClient
                     .Where(r => !string.IsNullOrEmpty(r.AlarmMessage))
                     .Where(r => r.AlarmMessage.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase))
                     .Where(r =>
-                        selectedCategory != "DW" || // <-- фильтрация по маске только для DW
+                        selectedCategory != "DW" || 
                         string.IsNullOrWhiteSpace(subFilter) ||
                         r.AlarmMessage.Contains(subFilter, StringComparison.OrdinalIgnoreCase))
                     .Where(r => r.CountWeek1 > minCount || r.CountWeek2 > minCount)
@@ -129,13 +131,20 @@ namespace LogAnalizerWpfClient
                 if (!filteredResults.Any())
                 {
                     MessageBox.Show("No data for selected category or filter.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                    chart.Series = Array.Empty<ISeries>();
-                    chart.XAxes = Array.Empty<Axis>();
-                    chart.YAxes = Array.Empty<Axis>();
+
+                    
+                    PlotModel = new PlotModel
+                    {
+                        Title = "Empty Chart",
+                        TextColor = OxyColors.Cyan,
+                        PlotAreaBorderColor = OxyColors.Transparent
+                    };
+                    oxyPlotView.Model = PlotModel;
+
                     return;
                 }
 
-                BuildChart(filteredResults);
+                BuildChart(filteredResults); 
             }
             catch (Exception ex)
             {
@@ -145,91 +154,153 @@ namespace LogAnalizerWpfClient
 
         
 
-      private void BuildChart(List<ComparisonResult> filteredResults)
+     
+        
+      
+        
+    private void BuildChart(List<ComparisonResult> filteredResults)
+{
+    var model = new PlotModel
+    {
+        Title = $"Comparison: {_week1} vs {_week2}",
+        TextColor = OxyColors.Cyan,
+        PlotAreaBorderColor = OxyColors.Transparent,
+        Background = OxyColors.Black
+    };
+
+    var legend = new Legend
+    {
+        LegendPosition = LegendPosition.TopRight,
+        LegendOrientation = LegendOrientation.Horizontal,
+        LegendPlacement = LegendPlacement.Outside,
+        TextColor = OxyColors.Cyan
+    };
+    model.Legends.Add(legend);
+
+    var categoryAxis = new CategoryAxis
+    {
+        Position = AxisPosition.Bottom,
+        TextColor = OxyColors.Cyan,
+        TicklineColor = OxyColors.Cyan,
+        FontSize = 10,
+        GapWidth = 1
+    };
+
+    foreach (var label in filteredResults.Select(r => WrapText(r.AlarmMessage, 25)))
+        categoryAxis.Labels.Add(label);
+    
+    int maxValue = filteredResults
+        .SelectMany(r => new[] { r.CountWeek1, r.CountWeek2 })
+        .DefaultIfEmpty(0)
+        .Max();
+    
+
+    var valueAxis = new LinearAxis
+    {
+        Position = AxisPosition.Left,
+        Title = "Count",
+        TitleColor = OxyColors.Cyan,
+        TextColor = OxyColors.Cyan,
+        Minimum = 0,
+        Maximum = maxValue + 5,
+        MajorGridlineStyle = LineStyle.Solid,
+        MajorGridlineColor = OxyColors.DarkSlateGray
+    };
+
+    model.Axes.Add(categoryAxis);
+    model.Axes.Add(valueAxis);
+
+    var seriesWeek1 = new LogAnalizerWpfClient.CustomSeries.RectangleBarSeries
+    {
+        Title = "Week 1",
+        FillColor = OxyColors.LightGray
+    };
+
+    var seriesWeek2 = new LogAnalizerWpfClient.CustomSeries.RectangleBarSeries
+    {
+        Title = "Week 2",
+        FillColor = OxyColors.SteelBlue
+    };
+
+    const double barWidth = 0.4;
+
+    for (int i = 0; i < filteredResults.Count; i++)
+    {
+        var week1 = filteredResults[i].CountWeek1;
+        var week2 = filteredResults[i].CountWeek2;
+
+        // Week 1
+        seriesWeek1.Items.Add(new RectangleBarItem
         {
-            
-            
-            var labels = new List<string>();
-            var valuesWeek1 = new List<double>();
-            var valuesWeek2 = new List<double>();
+            X0 = i - barWidth,
+            X1 = i,
+            Y0 = 0,
+            Y1 = week1
+        });
 
-            foreach (var result in filteredResults)
+        // Week 2
+        seriesWeek2.Items.Add(new RectangleBarItem
+        {
+            X0 = i,
+            X1 = i + barWidth,
+            Y0 = 0,
+            Y1 = week2
+        });
+
+        // Подпись над Week 1
+        model.Annotations.Add(new TextAnnotation
+        {
+            Text = week1.ToString(),
+            TextColor = OxyColors.LightGray,
+            FontSize = 20,
+            TextPosition = new DataPoint(i - barWidth / 2, week1 + 0.3),
+            TextHorizontalAlignment = OxyPlot.HorizontalAlignment.Center,
+            TextVerticalAlignment = OxyPlot.VerticalAlignment.Bottom
+        });
+
+        // Подпись над Week 2
+        model.Annotations.Add(new TextAnnotation
+        {
+            Text = week2.ToString(),
+            TextColor = OxyColors.SteelBlue,
+            FontSize = 20,
+            TextPosition = new DataPoint(i + barWidth / 2, week2 + 0.3),
+            TextHorizontalAlignment = OxyPlot.HorizontalAlignment.Center,
+            TextVerticalAlignment = OxyPlot.VerticalAlignment.Bottom
+        });
+    }
+
+    model.Series.Add(seriesWeek1);
+    model.Series.Add(seriesWeek2);
+
+    PlotModel = model;
+    oxyPlotView.Model = PlotModel;
+}
+        
+        
+        private string WrapText(string text, int maxLength)
+        {
+            var words = text.Split(' ');
+            var lines = new List<string>();
+            var currentLine = "";
+
+            foreach (var word in words)
             {
-               
-                labels.Add(result.AlarmMessage);
-                valuesWeek1.Add(result.CountWeek1);
-                valuesWeek2.Add(result.CountWeek2);
-
-                
-                labels.Add(""); 
-                valuesWeek1.Add(double.NaN); 
-                valuesWeek2.Add(double.NaN);
-                
-                labels.Add(""); 
-                valuesWeek1.Add(double.NaN); 
-                valuesWeek2.Add(double.NaN);
-                
-                
-               
-                
-                
+                if ((currentLine + " " + word).Trim().Length > maxLength)
+                {
+                    lines.Add(currentLine.Trim());
+                    currentLine = word;
+                }
+                else
+                {
+                    currentLine += " " + word;
+                }
             }
 
-            var seriesWeek1 = new ColumnSeries<double>
-            {
-                Values = valuesWeek1,
-                Name = _week1.ToString(),
-                Fill = new SolidColorPaint(SKColors.LightGray),
-                DataLabelsPaint = new SolidColorPaint(SKColors.Cyan),
-                DataLabelsPosition = LiveChartsCore.Measure.DataLabelsPosition.Top,
-                DataLabelsFormatter = point => point.Coordinate.PrimaryValue.ToString(),
-                
-            };
+            if (!string.IsNullOrWhiteSpace(currentLine))
+                lines.Add(currentLine.Trim());
 
-            var seriesWeek2 = new ColumnSeries<double>
-            {
-                Values = valuesWeek2,
-                Name = _week2.ToString(),
-                Fill = new SolidColorPaint(SKColors.SteelBlue),
-                DataLabelsPaint = new SolidColorPaint(SKColors.Cyan),
-                DataLabelsPosition = LiveChartsCore.Measure.DataLabelsPosition.Top,
-                DataLabelsFormatter = point => point.Coordinate.PrimaryValue.ToString(),
-                
-            };
-
-            chart.Series = new ISeries[] { seriesWeek1, seriesWeek2 };
-
-            chart.XAxes = new Axis[]
-            {
-                new Axis
-                {
-                    Labels = labels,
-                    LabelsRotation = 25,
-                    TextSize = 12,
-                    LabelsPaint = new SolidColorPaint(SKColors.Cyan),
-                    UnitWidth = 1,
-                    ForceStepToMin = true,
-                    Padding = new Padding(20, 0, 0, 50),
-                    MinStep = 4,
-                   
-                }
-            };
-            
-            chart.YAxes = new Axis[]
-            {
-                new Axis
-                {
-                    Name = "Count",
-                    TextSize = 12,
-                    LabelsPaint = new SolidColorPaint(SKColors.Cyan),
-                    NamePaint = new SolidColorPaint(SKColors.Cyan)
-                }
-            };
-
-            chart.LegendTextPaint = new SolidColorPaint(SKColors.Cyan);
-            
-            
-          
+            return string.Join("\n", lines);
         }
       
 
@@ -244,7 +315,7 @@ namespace LogAnalizerWpfClient
         }
         
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        /*private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new Microsoft.Win32.SaveFileDialog
             {
@@ -259,26 +330,51 @@ namespace LogAnalizerWpfClient
             var filePath = dialog.FileName;
             var ext = Path.GetExtension(filePath)?.ToLowerInvariant();
 
-            
-            var renderTarget = new RenderTargetBitmap(
-                (int)chart.ActualWidth,
-                (int)chart.ActualHeight,
-                96, 96, 
-                PixelFormats.Pbgra32);
-            renderTarget.Render(chart);
+            var width = (int)oxyPlotView.ActualWidth;
+            var height = (int)oxyPlotView.ActualHeight;
 
-          
+            var renderTarget = new RenderTargetBitmap(width, height, 96, 96, PixelFormats.Pbgra32);
+            renderTarget.Render(oxyPlotView);
+
             BitmapEncoder encoder = ext == ".jpg"
                 ? new JpegBitmapEncoder()
                 : new PngBitmapEncoder();
 
             encoder.Frames.Add(BitmapFrame.Create(renderTarget));
 
-           
             using var stream = new FileStream(filePath, FileMode.Create);
             encoder.Save(stream);
 
             MessageBox.Show($"Chart saved to {filePath}", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
+        }*/
+        
+        
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new Microsoft.Win32.SaveFileDialog
+            {
+                FileName = "Chart",
+                DefaultExt = ".png",
+                Filter = "PNG Image (*.png)|*.png"
+            };
+
+            if (dialog.ShowDialog() != true)
+                return;
+
+            var filePath = dialog.FileName;
+
+            var exporter = new OxyPlot.Wpf.PngExporter
+            {
+                Width = 1800,           // Настрой под размеры окна
+                Height = 900,
+               // Background = OxyColors.Black,
+                Resolution = 96
+            };
+
+            using var stream = File.Create(filePath);
+            exporter.Export(PlotModel, stream);
+
+            MessageBox.Show("Chart saved!", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         
@@ -303,6 +399,16 @@ namespace LogAnalizerWpfClient
             if (e.ChangedButton == MouseButton.Left)
                 DragMove();
         }
+        
+        
+        
+        protected override void OnContentRendered(EventArgs e)
+        {
+            base.OnContentRendered(e);
+            SelectedDbText.Text = $"Selected DB: {SelectedDatabaseState.CurrentDatabaseName}";
+        }
+        
+        
     }
 }
 

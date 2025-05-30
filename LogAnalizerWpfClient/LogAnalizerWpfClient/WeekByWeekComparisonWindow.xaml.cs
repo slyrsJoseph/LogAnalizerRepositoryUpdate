@@ -10,7 +10,7 @@ using Microsoft.Win32;
 
 namespace LogAnalizerWpfClient
 {
-    public partial class WeekByWeekComparisonWindow : Window
+    public partial class WeekByWeekComparisonWindow  : MaterialDesignWindow
     {
         private readonly LogApiClient _logApiClient;
         private readonly Dictionary<LogWeekType, Button> _weekButtons = new();
@@ -51,6 +51,42 @@ namespace LogAnalizerWpfClient
                     _importedWeeks.Add(week);
             }
         }
+        
+        private async void btnDeleteLog_Click(object sender, RoutedEventArgs e)
+        {
+            var weekToDelete = _selectedWeeksForComparison.LastOrDefault();
+
+            if (!_importedWeeks.Contains(weekToDelete))
+            {
+                MessageBox.Show("Please select a loaded (green) week to delete.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            var result = MessageBox.Show($"Delete log for {weekToDelete}?", "Confirm Deletion",
+                MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result != MessageBoxResult.Yes)
+                return;
+
+            try
+            {
+                await _logApiClient.DeleteLogForWeekAsync(weekToDelete);
+
+               
+                _importedWeeks.Remove(weekToDelete);
+                _selectedWeeksForComparison.Remove(weekToDelete);
+
+                
+                LoadWeeks();
+
+                MessageBox.Show($"Log for {weekToDelete} deleted successfully.", "Deleted", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error deleting log: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        
 
         private void WeekButton_Click(object sender, RoutedEventArgs e)
         {
@@ -163,10 +199,22 @@ namespace LogAnalizerWpfClient
         }
         
         
+        private void Close_Click(object sender, RoutedEventArgs e) => Close();
+        
+        
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
+        
+        
+        protected override void OnContentRendered(EventArgs e)
+        {
+            base.OnContentRendered(e);
+            SelectedDbText.Text = $"Selected DB: {SelectedDatabaseState.CurrentDatabaseName}";
+        }
+        
+        
     }
 }

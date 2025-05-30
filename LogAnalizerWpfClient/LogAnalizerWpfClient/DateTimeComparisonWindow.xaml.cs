@@ -12,7 +12,7 @@ using Microsoft.Win32;
 
 namespace LogAnalizerWpfClient
 {
-    public partial class DateTimeComparisonWindow : Window
+    public partial class DateTimeComparisonWindow :MaterialDesignWindow
     {
         private readonly LogApiClient _apiClient;
         private Dictionary<LogWeekType, (DateTime Start, DateTime End)> _weekDateRanges;
@@ -111,6 +111,13 @@ namespace LogAnalizerWpfClient
         {
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
+        }
+        
+        
+        protected override void OnContentRendered(EventArgs e)
+        {
+            base.OnContentRendered(e);
+            SelectedDbText.Text = $"Selected DB: {SelectedDatabaseState.CurrentDatabaseName}";
         }
         
         

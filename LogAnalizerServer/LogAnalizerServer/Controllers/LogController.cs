@@ -52,15 +52,17 @@ public class LogController : ControllerBase
 [HttpPost("compare/by-daterange")]
 public async Task<ActionResult<List<ComparisonResult>>> CompareByDateRange([FromBody] DateTimeRangeComparisonRequest request)
 {
-   
-
     try
     {
-        await using var context = new LogAnalizerServerDbContext(new DbContextOptionsBuilder<LogAnalizerServerDbContext>()
-            .UseSqlServer(DatabaseConnectionManager.CurrentConnectionString)
-            .Options);
+        var optionsBuilder = new DbContextOptionsBuilder<LogAnalizerServerDbContext>();
 
-       
+        if (DatabaseConnectionManager.CurrentMode == DatabaseMode.Sqlite)
+            optionsBuilder.UseSqlite(DatabaseConnectionManager.CurrentConnectionString);
+        else
+            optionsBuilder.UseSqlServer(DatabaseConnectionManager.CurrentConnectionString);
+
+        await using var context = new LogAnalizerServerDbContext(optionsBuilder.Options);
+
         var allowedAlarmClasses = new[]
         {
             "CRI_B", "CRI_C", "CRI_A", "FAULT",
@@ -68,7 +70,6 @@ public async Task<ActionResult<List<ComparisonResult>>> CompareByDateRange([From
             "WRN", "WRN_A", "WRN_B", "WRN_C"
         };
 
-      
         var range1Logs = await context.AlarmLogs
             .Where(log =>
                 log.GenerationTime >= request.Range1Start &&
@@ -90,11 +91,14 @@ public async Task<ActionResult<List<ComparisonResult>>> CompareByDateRange([From
             return BadRequest("No logs in range selected.");
         }
 
-       
-        var grouped1 = range1Logs.GroupBy(l => l.AlarmMessage).Select(g => new { AlarmMessage = g.Key, Count = g.Count() }).ToList();
-        var grouped2 = range2Logs.GroupBy(l => l.AlarmMessage).Select(g => new { AlarmMessage = g.Key, Count = g.Count() }).ToList();
+        var grouped1 = range1Logs.GroupBy(l => l.AlarmMessage)
+            .Select(g => new { AlarmMessage = g.Key, Count = g.Count() })
+            .ToList();
 
-        
+        var grouped2 = range2Logs.GroupBy(l => l.AlarmMessage)
+            .Select(g => new { AlarmMessage = g.Key, Count = g.Count() })
+            .ToList();
+
         var merged = grouped1
             .Union(grouped2)
             .GroupBy(x => x.AlarmMessage)
@@ -110,7 +114,7 @@ public async Task<ActionResult<List<ComparisonResult>>> CompareByDateRange([From
     }
     catch (Exception ex)
     {
-        return BadRequest($"Dates range comparision error: {ex.Message}");
+        return BadRequest($"Dates range comparison error: {ex.Message}");
     }
 }
     
@@ -136,7 +140,12 @@ public async Task<ActionResult<List<ComparisonResult>>> CompareByDateRange([From
         });
     }
     
-    
+    [HttpDelete("delete")]
+    public async Task<IActionResult> DeleteLogForWeek([FromQuery] LogWeekType weekType)
+    {
+        var deleted = await _logService.DeleteLogsByWeekTypeAsync(weekType);
+        return deleted ? Ok("Log deleted") : NotFound("No log found for this week");
+    }
     
     
     

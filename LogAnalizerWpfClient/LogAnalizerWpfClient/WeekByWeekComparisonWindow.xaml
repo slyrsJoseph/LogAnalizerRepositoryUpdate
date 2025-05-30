@@ -1,16 +1,74 @@
-<Window x:Class="LogAnalizerWpfClient.WeekByWeekComparisonWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Week Comparison" Height="600" Width="1024"
-        WindowStartupLocation="CenterScreen"
-        Background="#1A1A1A"
-        WindowStyle="None"
-        AllowsTransparency="True">
+<local:MaterialDesignWindow x:Class="LogAnalizerWpfClient.WeekByWeekComparisonWindow"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:local="clr-namespace:LogAnalizerWpfClient"
+                            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                            Title="Week Comparison"
+                            Height="600" Width="1024"
+                            WindowStartupLocation="CenterScreen"
+                            WindowStyle="None"
+                            ResizeMode="CanResizeWithGrip"
+                            Background="{DynamicResource MaterialDesignPaper}">
 
     <Window.Resources>
+        <!-- Material Design + Hover Animated Style -->
+        <Style x:Key="AnimatedRaisedButton" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <TranslateTransform Y="0"/>
+                    </TransformGroup>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00FFFF" BlurRadius="4" ShadowDepth="0" Opacity="0.2"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                                 To="1.05" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                                 To="1.05" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                                 To="-2" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Button.Effect).(DropShadowEffect.BlurRadius)"
+                                                 To="12" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Button.Effect).(DropShadowEffect.Opacity)"
+                                                 To="0.6" Duration="0:0:0.15"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                                 To="1" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                                 To="1" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                                 To="0" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Button.Effect).(DropShadowEffect.BlurRadius)"
+                                                 To="4" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(Button.Effect).(DropShadowEffect.Opacity)"
+                                                 To="0.2" Duration="0:0:0.15"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Стиль кнопок для WeekGrid -->
         <Style x:Key="WeekButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="LightGreen" />
-            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Background" Value="Red" />
+            <Setter Property="Foreground" Value="White" />
             <Setter Property="FontWeight" Value="Bold" />
             <Setter Property="Margin" Value="4" />
             <Setter Property="Width" Value="50" />
@@ -21,11 +79,11 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="4" 
+                        <Border CornerRadius="6"
                                 Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -37,37 +95,28 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        
-        <Style x:Key="TechnoButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="#000000" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Padding" Value="6,2" />
-            <Setter Property="Margin" Value="4" />
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="BorderBrush" Value="#00FFFF" />
-            <Setter Property="BorderThickness" Value="2" />
-            <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="6" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#00FFFF" />
-                    <Setter Property="Foreground" Value="#000000" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
     </Window.Resources>
 
-    <Border Background="#1A1A1A" CornerRadius="10" BorderBrush="#00FFFF" BorderThickness="2" Padding="10"   MouseDown="Border_MouseDown">
-        <Grid>
+    <DockPanel>
+        <Grid Background="{DynamicResource PrimaryHueMidBrush}" Height="40" DockPanel.Dock="Top" MouseDown="Border_MouseDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Week Comparison"
+                       VerticalAlignment="Center"
+                       Margin="16,0"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       FontSize="16"/>
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                <Button Style="{StaticResource MaterialDesignToolForegroundButton}" Click="Close_Click" Width="40" Height="40" ToolTip="Close">
+                    <materialDesign:PackIcon Kind="Close"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid Background="{DynamicResource MaterialDesignPaper}" Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -80,12 +129,24 @@
                        HorizontalAlignment="Center"/>
 
             <UniformGrid x:Name="WeekGrid" Grid.Row="1" Columns="10" Rows="6" Margin="0,10,0,10" HorizontalAlignment="Center"/>
+            
+            
+            <TextBlock x:Name="SelectedDbText"
+                       Text=""
+                       Foreground="#00FFFF"
+                       FontSize="12"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom"
+                       Margin="10"
+                       Grid.Row="2"/>
+            
 
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <Button Content="Import" Width="120" Click="btnImport_Click" Style="{StaticResource TechnoButtonStyle}"/>
-                <Button Content="Compare" Width="120" Click="btnCompare_Click" Style="{StaticResource TechnoButtonStyle}"/>
-                <Button Content="Back" Width="100" Click="btnBack_Click" Style="{StaticResource TechnoButtonStyle}"/>
+                <Button Content="Import" Width="120" Click="btnImport_Click" Style="{StaticResource AnimatedRaisedButton}" Margin="5"/>
+                <Button Content="🗑 Delete Log for Week" Style="{StaticResource AnimatedRaisedButton}" Click="btnDeleteLog_Click" Margin="5"/>
+                <Button Content="Compare" Width="120" Click="btnCompare_Click" Style="{StaticResource AnimatedRaisedButton}" Margin="5"/>
+                <Button Content="Back" Width="100" Click="btnBack_Click" Style="{StaticResource AnimatedRaisedButton}" Margin="5"/>
             </StackPanel>
         </Grid>
-    </Border>
-</Window>
+    </DockPanel>
+</local:MaterialDesignWindow>

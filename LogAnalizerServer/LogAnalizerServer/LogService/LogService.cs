@@ -226,5 +226,17 @@ public async Task ImportLogsAsync(string filePath, LogWeekType weekType)
                 .ToListAsync();
         }
         
+        
+        
+        public async Task<bool> DeleteLogsByWeekTypeAsync(LogWeekType weekType)
+        {
+            var logs = await _context.AlarmLogs.Where(l => l.WeekType == weekType).ToListAsync();
+            if (!logs.Any()) return false;
+
+            await _context.BulkDeleteAsync(logs); 
+            return true;
+        }
+        
+        
     }
 }

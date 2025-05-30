@@ -1,69 +1,143 @@
-<Window x:Class="LogAnalizerWpfClient.DateTimeComparisonWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Date/Time Comparison" Height="400" Width="500"
-        WindowStartupLocation="CenterScreen"
-        Background="#1A1A1A"
-        WindowStyle="None" AllowsTransparency="True">
+<local:MaterialDesignWindow x:Class="LogAnalizerWpfClient.DateTimeComparisonWindow"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                            xmlns:local="clr-namespace:LogAnalizerWpfClient"
+                            Title="Date/Time Comparison"
+                            Height="400" Width="500"
+                            WindowStartupLocation="CenterScreen"
+                            WindowStyle="None"
+                            ResizeMode="CanResizeWithGrip"
+                            Background="{DynamicResource MaterialDesignPaper}">
 
     <Window.Resources>
-        <Style x:Key="TechnoButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="#000000" />
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Padding" Value="6,2" />
-            <Setter Property="Margin" Value="4" />
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="FontSize" Value="12" />
-            <Setter Property="BorderBrush" Value="#00FFFF" />
-            <Setter Property="BorderThickness" Value="2" />
-            <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="Template">
+        <!-- Кнопка с ripple и hover-анимацией -->
+        <Style x:Key="AnimatedRaisedButton" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+            <Setter Property="RenderTransform">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="6" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                    </ControlTemplate>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <TranslateTransform Y="0"/>
+                    </TransformGroup>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00FFFF" BlurRadius="4" ShadowDepth="0" Opacity="0.2"/>
                 </Setter.Value>
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#00FFFF" />
-                    <Setter Property="Foreground" Value="#000000" />
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                                 To="1.05" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                                 To="1.05" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                                 To="-2" Duration="0:0:0.15"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                                 To="1" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                                 To="1" Duration="0:0:0.15"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                                 To="0" Duration="0:0:0.15"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <!-- Светлый ComboBox -->
+        <Style x:Key="LightComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#00FFFF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+
+        <!-- Стили для DatePicker -->
+        <Style TargetType="DatePicker" x:Key="DarkDatePickerStyle">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="#00FFFF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
     </Window.Resources>
 
-    <Border Background="#1A1A1A" CornerRadius="10" BorderBrush="#00FFFF" BorderThickness="2" Padding="10" MouseDown="Border_MouseDown">
+    <Border Background="#1A1A1A"
+            CornerRadius="10"
+            BorderBrush="#00FFFF"
+            BorderThickness="2"
+            Padding="10"
+            MouseDown="Border_MouseDown">
         <StackPanel>
-            <TextBlock Text="Compare by Date range selection" Foreground="#00FFFF" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+            <TextBlock Text="Compare by Date range selection"
+                       Foreground="#00FFFF"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Margin="0,0,0,10"
+                       HorizontalAlignment="Center"/>
 
-            
+            <!-- Первая неделя -->
             <StackPanel Orientation="Vertical" Margin="0,5">
                 <TextBlock Text="Select first week:" Foreground="#00FFFF"/>
-                <ComboBox x:Name="comboWeek1" SelectionChanged="comboWeek1_SelectionChanged"/>
+                <ComboBox x:Name="comboWeek1"
+                          Style="{StaticResource LightComboBoxStyle}"
+                          SelectionChanged="comboWeek1_SelectionChanged"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,5">
-                <DatePicker x:Name="dateRange1Start" Width="200" Margin="0,0,10,0"/>
-                <DatePicker x:Name="dateRange1End" Width="200"/>
+                <DatePicker x:Name="dateRange1Start" Width="200" Margin="0,0,10,0" Style="{StaticResource DarkDatePickerStyle}"/>
+                <DatePicker x:Name="dateRange1End" Width="200" Style="{StaticResource DarkDatePickerStyle}"/>
             </StackPanel>
 
+            <!-- Вторая неделя -->
             <StackPanel Orientation="Vertical" Margin="0,10">
                 <TextBlock Text="Select second week:" Foreground="#00FFFF"/>
-                <ComboBox x:Name="comboWeek2" SelectionChanged="comboWeek2_SelectionChanged"/>
+                <ComboBox x:Name="comboWeek2"
+                          Style="{StaticResource LightComboBoxStyle}"
+                          SelectionChanged="comboWeek2_SelectionChanged"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,5">
-                <DatePicker x:Name="dateRange2Start" Width="200" Margin="0,0,10,0"/>
-                <DatePicker x:Name="dateRange2End" Width="200"/>
+                <DatePicker x:Name="dateRange2Start" Width="200" Margin="0,0,10,0" Style="{StaticResource DarkDatePickerStyle}"/>
+                <DatePicker x:Name="dateRange2End" Width="200" Style="{StaticResource DarkDatePickerStyle}"/>
             </StackPanel>
+            
+            <TextBlock x:Name="SelectedDbText"
+                       Text=""
+                       Foreground="#00FFFF"
+                       FontSize="12"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom"
+                       Margin="10"
+                       Grid.Row="2"/>
 
+            <!-- Кнопки -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <Button Content="Compare" Width="100" Click="btnCompare_Click" Style="{StaticResource TechnoButtonStyle}"/>
-                <Button Content="Back" Width="100" Click="btnBack_Click" Style="{StaticResource TechnoButtonStyle}"/>
+                <Button Content="Compare"
+                        Width="100"
+                        Click="btnCompare_Click"
+                        Style="{StaticResource AnimatedRaisedButton}"/>
+                <Button Content="Back"
+                        Width="100"
+                        Click="btnBack_Click"
+                        Style="{StaticResource AnimatedRaisedButton}"/>
             </StackPanel>
         </StackPanel>
     </Border>
-</Window>
+</local:MaterialDesignWindow>

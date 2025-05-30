@@ -342,3 +342,12 @@ C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\L
 C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
 C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
 C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\OxyPlot.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\OxyPlot.Wpf.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\OxyPlot.Wpf.Shared.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\MaterialDesignColors.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient_MarkupCompile.lref
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\App.baml
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs

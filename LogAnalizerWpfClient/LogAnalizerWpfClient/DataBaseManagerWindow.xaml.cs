@@ -8,7 +8,7 @@ using LogAnalizerShared; // Для доступа к DatabaseMode
 
 namespace LogAnalizerWpfClient
 {
-    public partial class DatabaseManagerWindow : Window
+    public partial class DatabaseManagerWindow : MaterialDesignWindow
     {
         private readonly LogApiClient _logApiClient;
         private readonly DatabaseMode _mode;
@@ -87,6 +87,10 @@ namespace LogAnalizerWpfClient
                     await _logApiClient.SelectSqliteDatabaseByNameAsync(dbName);
                 else
                     await _logApiClient.SelectDatabaseAsync(dbName);
+                
+                
+                SelectedDatabaseState.Set(dbName);
+
 
                 MessageBox.Show("Database selected.", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
                 Close();
@@ -137,5 +141,15 @@ namespace LogAnalizerWpfClient
         {
             Close();
         }
+        
+        
+        private void Minimize_Click(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
+        private void MaximizeRestore_Click(object sender, RoutedEventArgs e)
+            => WindowState = WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
+        private void Close_Click(object sender, RoutedEventArgs e) => Close();
+        
+        
+        
+        
     }
 }

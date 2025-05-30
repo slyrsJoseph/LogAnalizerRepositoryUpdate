@@ -18,13 +18,14 @@ using System.Data.Sql;
 
 namespace LogAnalizerWpfClient
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow :MaterialDesignWindow
     {
         private readonly LogApiClient _logApiClient;
 
         public MainWindow()
         {
             InitializeComponent();
+            SelectedDbText.Text = $"Selected DB: {SelectedDatabaseState.CurrentDatabaseName}";
             DataContext = this;
 
             _logApiClient = new LogApiClient(new HttpClient { BaseAddress = new Uri("http://localhost:5001") });
@@ -39,6 +40,19 @@ namespace LogAnalizerWpfClient
            
            
         }
+        
+        
+        private bool EnsureDatabaseSelected()
+        {
+            if (!_logApiClient.IsDatabaseSelected)
+            {
+                MessageBox.Show("Please select a database before proceeding.", "Database Not Selected", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+            return true;
+        }
+        
+        
 
         private void btnManageDatabases_Click(object sender, RoutedEventArgs e)
         {
@@ -47,22 +61,36 @@ namespace LogAnalizerWpfClient
 
             var window = new DatabaseManagerWindow(_logApiClient, mode);
             window.ShowDialog();
+            
+            
+            SelectedDbText.Text = $"Selected DB: {SelectedDatabaseState.CurrentDatabaseName}";
         }
 
         private void btnCompareByDateRange_Click(object sender, RoutedEventArgs e)
         {
+            if (!EnsureDatabaseSelected())
+                return;
+            
+            
             var window = new DateTimeComparisonWindow(_logApiClient);
             window.ShowDialog();
         }
 
         private void btnWeekComparison_Click(object sender, RoutedEventArgs e)
         {
+            if (!EnsureDatabaseSelected())
+                return;
+            
             var window = new WeekByWeekComparisonWindow(_logApiClient);
             window.ShowDialog();
         }
 
         private void btnOpenTableDateRange_Click(object sender, RoutedEventArgs e)
         {
+            if (!EnsureDatabaseSelected())
+                return;
+            
+            
             var window = new TableDateTimeComparisonWindow(_logApiClient);
             window.Show();
         }
