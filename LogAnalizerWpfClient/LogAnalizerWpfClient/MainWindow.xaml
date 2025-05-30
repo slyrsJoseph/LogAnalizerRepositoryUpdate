@@ -66,26 +66,44 @@
     </Window.Resources>
 
     <DockPanel>
-        
+
         <TextBlock x:Name="SelectedDbText"
                    Foreground="#00FFFF"
                    FontSize="12"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Bottom"
                    Margin="10"/>
-        
+
         <!-- Title bar -->
         <Grid Background="{DynamicResource PrimaryHueMidBrush}" Height="40" DockPanel.Dock="Top" MouseDown="TitleBar_MouseDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Alarm Log Analyzer"
-                       VerticalAlignment="Center"
-                       Margin="16,0"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       FontSize="16"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0">
+                <Image Source="Images/oil-rig.png" Width="24" Height="24" Margin="0,0,8,0">
+                    <Image.RenderTransform>
+                        <ScaleTransform x:Name="iconScale" ScaleX="1" ScaleY="1"/>
+                    </Image.RenderTransform>
+                    <Image.Triggers>
+                        <EventTrigger RoutedEvent="Image.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                                    <DoubleAnimation Storyboard.TargetProperty="(Image.RenderTransform).(ScaleTransform.ScaleX)"
+                                                     From="1" To="1.15" Duration="0:0:1.5"/>
+                                    <DoubleAnimation Storyboard.TargetProperty="(Image.RenderTransform).(ScaleTransform.ScaleY)"
+                                                     From="1" To="1.15" Duration="0:0:1.5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Image.Triggers>
+                </Image>
+                <TextBlock Text="Alarm Log Analyzer"
+                           VerticalAlignment="Center"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           FontSize="16"/>
+            </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="1">
                 <Button Style="{StaticResource MaterialDesignToolForegroundButton}" Click="Minimize_Click" Width="40" Height="40" ToolTip="Minimize">
                     <materialDesign:PackIcon Kind="WindowMinimize"/>
