@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -41,7 +42,7 @@ namespace LogAnalizerWpfClient
             comboReportType.SelectedIndex = 0;
 
             comboCategory.ItemsSource = new List<string>
-                { "VPH", "BRC", "LGA", "HRN", "DDM", "DW", "DW ADS" ,"DW VFD", "DW ZPS", "DW ECS" ,"TFM", "ELT", "PDPH" };
+                { "VPH", "BRC", "LGA", "HRN", "DDM", "DW", "DW ADS" ,"DW VFD", "DW ZPS", "DW ECS" ,"TFM", "ELT", "PDPH","TD" };
             comboCategory.SelectedIndex = -1;
         }
 
@@ -82,7 +83,26 @@ namespace LogAnalizerWpfClient
 
                 var filteredResults = _results
                     .Where(r => !string.IsNullOrEmpty(r.AlarmMessage))
-                    .Where(r => r.AlarmMessage.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase))
+                    // .Where(r => r.AlarmMessage.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase))
+                    .Where(r =>
+                    {
+                        var msg = r.AlarmMessage;
+                        return selectedCategory switch
+                        {
+                            "DDM" => Regex.IsMatch(msg, @"^\s*DDM(?!.*\bDW\b)", RegexOptions.IgnoreCase),
+                            "DW" => Regex.IsMatch(msg, @"^\s*DW(?!.*\bDDM\b)", RegexOptions.IgnoreCase),
+                            "VPH" => Regex.IsMatch(msg, @"^\s*VPH", RegexOptions.IgnoreCase),
+                            "BRC" => Regex.IsMatch(msg, @"^\s*BRC", RegexOptions.IgnoreCase),
+                            "LGA" => Regex.IsMatch(msg, @"^\s*LGA", RegexOptions.IgnoreCase),
+                            "HRN" => Regex.IsMatch(msg, @"^\s*HRN", RegexOptions.IgnoreCase),
+                            "TFM" => Regex.IsMatch(msg, @"^\s*TFM", RegexOptions.IgnoreCase),
+                            "ELT" => Regex.IsMatch(msg, @"^\s*ELT", RegexOptions.IgnoreCase),
+                            "PDPH" => Regex.IsMatch(msg, @"^\s*PDPH", RegexOptions.IgnoreCase),
+                            "TD" => Regex.IsMatch(msg, @"^\s*TD", RegexOptions.IgnoreCase),
+                            
+                            _ => msg.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase)
+                        };
+                    })
                     .Where(r =>
                         selectedCategory != "DW" || 
                         string.IsNullOrWhiteSpace(subFilter) ||

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -71,7 +72,7 @@ namespace LogAnalizerWpfClient
 
             comboCategory.ItemsSource = new List<string>
                
-               { "VPH", "BRC", "LGA", "HRN", "DDM", "DW", "TFM", "ELT", "PDPH" };
+               { "VPH", "BRC", "LGA", "HRN", "DDM", "DW", "TFM", "ELT", "PDPH", "TD" };
             comboCategory.SelectedIndex = -1;
             
             
@@ -119,7 +120,26 @@ namespace LogAnalizerWpfClient
 
                 var filteredResults = _results
                     .Where(r => !string.IsNullOrEmpty(r.AlarmMessage))
-                    .Where(r => r.AlarmMessage.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase))
+                   // .Where(r => r.AlarmMessage.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase))
+                    .Where(r =>
+                    {
+                        var msg = r.AlarmMessage;
+                        return selectedCategory switch
+                        {
+                            "DDM" => Regex.IsMatch(msg, @"^\s*DDM(?!.*\bDW\b)", RegexOptions.IgnoreCase),
+                            "DW" => Regex.IsMatch(msg, @"^\s*DW(?!.*\bDDM\b)", RegexOptions.IgnoreCase),
+                            "VPH" => Regex.IsMatch(msg, @"^\s*VPH", RegexOptions.IgnoreCase),
+                            "BRC" => Regex.IsMatch(msg, @"^\s*BRC", RegexOptions.IgnoreCase),
+                            "LGA" => Regex.IsMatch(msg, @"^\s*LGA", RegexOptions.IgnoreCase),
+                            "HRN" => Regex.IsMatch(msg, @"^\s*HRN", RegexOptions.IgnoreCase),
+                            "TFM" => Regex.IsMatch(msg, @"^\s*TFM", RegexOptions.IgnoreCase),
+                            "ELT" => Regex.IsMatch(msg, @"^\s*ELT", RegexOptions.IgnoreCase),
+                            "PDPH" => Regex.IsMatch(msg, @"^\s*PDPH", RegexOptions.IgnoreCase),
+                            "TD" => Regex.IsMatch(msg, @"^\s*TD", RegexOptions.IgnoreCase),
+                            
+                            _ => msg.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase)
+                        };
+                    })
                     .Where(r =>
                         selectedCategory != "DW" || 
                         string.IsNullOrWhiteSpace(subFilter) ||
@@ -160,9 +180,12 @@ namespace LogAnalizerWpfClient
         
     private void BuildChart(List<ComparisonResult> filteredResults)
 {
+    
+    string selectedCategory = comboCategory.SelectedItem?.ToString() ?? "";
+    
     var model = new PlotModel
     {
-        Title = $"Comparison: {_week1} vs {_week2}",
+        Title = $"{selectedCategory} - Comparison: {_week1} vs {_week2}",
         TextColor = OxyColors.Cyan,
         PlotAreaBorderColor = OxyColors.Transparent,
         Background = OxyColors.Black
@@ -182,17 +205,33 @@ namespace LogAnalizerWpfClient
         Position = AxisPosition.Bottom,
         TextColor = OxyColors.Cyan,
         TicklineColor = OxyColors.Cyan,
-        FontSize = 10,
-        GapWidth = 1
+        GapWidth = 1,
+        FontSize = filteredResults.Count < 5 ? 16 :
+            filteredResults.Count < 10 ? 13 :
+            filteredResults.Count < 20 ? 11 : 9,
     };
 
     foreach (var label in filteredResults.Select(r => WrapText(r.AlarmMessage, 25)))
         categoryAxis.Labels.Add(label);
     
-    int maxValue = filteredResults
+    /*int maxValue = filteredResults
         .SelectMany(r => new[] { r.CountWeek1, r.CountWeek2 })
         .DefaultIfEmpty(0)
-        .Max();
+        .Max();*/
+    
+    int max = filteredResults.Max(r => Math.Max(r.CountWeek1, r.CountWeek2));
+    
+    int step;
+    if (max < 20)
+        step = 10;
+    else if (max < 100)
+        step = 20;
+    else if (max < 1000)
+        step = 100;
+    else
+        step = 1000;
+
+    int maxValue = max + step;
     
 
     var valueAxis = new LinearAxis
@@ -202,7 +241,7 @@ namespace LogAnalizerWpfClient
         TitleColor = OxyColors.Cyan,
         TextColor = OxyColors.Cyan,
         Minimum = 0,
-        Maximum = maxValue + 5,
+        Maximum = maxValue,
         MajorGridlineStyle = LineStyle.Solid,
         MajorGridlineColor = OxyColors.DarkSlateGray
     };
@@ -212,13 +251,13 @@ namespace LogAnalizerWpfClient
 
     var seriesWeek1 = new LogAnalizerWpfClient.CustomSeries.RectangleBarSeries
     {
-        Title = "Week 1",
+        Title = "Previous Week",
         FillColor = OxyColors.LightGray
     };
 
     var seriesWeek2 = new LogAnalizerWpfClient.CustomSeries.RectangleBarSeries
     {
-        Title = "Week 2",
+        Title = "Current Week",
         FillColor = OxyColors.SteelBlue
     };
 
@@ -315,38 +354,7 @@ namespace LogAnalizerWpfClient
         }
         
 
-        /*private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-            var dialog = new Microsoft.Win32.SaveFileDialog
-            {
-                FileName = "Chart",
-                DefaultExt = ".png",
-                Filter = "PNG Image (*.png)|*.png|JPEG Image (*.jpg)|*.jpg"
-            };
-
-            if (dialog.ShowDialog() != true)
-                return;
-
-            var filePath = dialog.FileName;
-            var ext = Path.GetExtension(filePath)?.ToLowerInvariant();
-
-            var width = (int)oxyPlotView.ActualWidth;
-            var height = (int)oxyPlotView.ActualHeight;
-
-            var renderTarget = new RenderTargetBitmap(width, height, 96, 96, PixelFormats.Pbgra32);
-            renderTarget.Render(oxyPlotView);
-
-            BitmapEncoder encoder = ext == ".jpg"
-                ? new JpegBitmapEncoder()
-                : new PngBitmapEncoder();
-
-            encoder.Frames.Add(BitmapFrame.Create(renderTarget));
-
-            using var stream = new FileStream(filePath, FileMode.Create);
-            encoder.Save(stream);
-
-            MessageBox.Show($"Chart saved to {filePath}", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
-        }*/
+      
         
         
         private void btnSave_Click(object sender, RoutedEventArgs e)

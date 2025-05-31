@@ -4,13 +4,12 @@
                             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                             xmlns:local="clr-namespace:LogAnalizerWpfClient"
                             Title="Alarm Log Analyzer"
-                            Height="600" Width="1024"
+                            Height="700" Width="1024"
                             WindowStartupLocation="CenterScreen"
                             WindowStyle="None" ResizeMode="CanResizeWithGrip"
-                            Background="{DynamicResource MaterialDesignPaper}">
+                            Background="#000000">
 
     <Window.Resources>
-        <!-- Кастомная кнопка с анимацией при наведении -->
         <Style x:Key="AnimatedRaisedButton" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}">
             <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
             <Setter Property="RenderTransform">
@@ -65,123 +64,104 @@
         </Style>
     </Window.Resources>
 
-    <DockPanel>
+    <Grid>
 
-        <TextBlock x:Name="SelectedDbText"
-                   Foreground="#00FFFF"
-                   FontSize="12"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Bottom"
-                   Margin="10"/>
+        <!-- Заголовок окна -->
+        <Border Background="Transparent" Height="40" VerticalAlignment="Top" MouseDown="TitleBar_MouseDown">
+            <Grid Background="{DynamicResource PrimaryHueMidBrush}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-        <!-- Title bar -->
-        <Grid Background="{DynamicResource PrimaryHueMidBrush}" Height="40" DockPanel.Dock="Top" MouseDown="TitleBar_MouseDown">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0">
-                <Image Source="Images/oil-rig.png" Width="24" Height="24" Margin="0,0,8,0">
-                    <Image.RenderTransform>
-                        <ScaleTransform x:Name="iconScale" ScaleX="1" ScaleY="1"/>
-                    </Image.RenderTransform>
-                    <Image.Triggers>
-                        <EventTrigger RoutedEvent="Image.Loaded">
-                            <BeginStoryboard>
-                                <Storyboard RepeatBehavior="Forever" AutoReverse="True">
-                                    <DoubleAnimation Storyboard.TargetProperty="(Image.RenderTransform).(ScaleTransform.ScaleX)"
-                                                     From="1" To="1.15" Duration="0:0:1.5"/>
-                                    <DoubleAnimation Storyboard.TargetProperty="(Image.RenderTransform).(ScaleTransform.ScaleY)"
-                                                     From="1" To="1.15" Duration="0:0:1.5"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </Image.Triggers>
-                </Image>
-                <TextBlock Text="Alarm Log Analyzer"
-                           VerticalAlignment="Center"
-                           FontWeight="Bold"
-                           Foreground="White"
-                           FontSize="16"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Column="1">
-                <Button Style="{StaticResource MaterialDesignToolForegroundButton}" Click="Minimize_Click" Width="40" Height="40" ToolTip="Minimize">
-                    <materialDesign:PackIcon Kind="WindowMinimize"/>
-                </Button>
-                <Button Style="{StaticResource MaterialDesignToolForegroundButton}" Click="MaximizeRestore_Click" Width="40" Height="40" ToolTip="Maximize/Restore">
-                    <materialDesign:PackIcon Kind="WindowRestore"/>
-                </Button>
-                <Button Style="{StaticResource MaterialDesignToolForegroundButton}" Click="Close_Click" Width="40" Height="40" ToolTip="Close">
-                    <materialDesign:PackIcon Kind="Close"/>
-                </Button>
-            </StackPanel>
-        </Grid>
+                <!-- Лого и заголовок -->
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="1">
+                    <Image Source="Images/oil-rig.png" Width="28" Height="28" Margin="65,0,4,0">
+                        <Image.RenderTransform>
+                            <ScaleTransform x:Name="iconScale" ScaleX="1" ScaleY="1"/>
+                        </Image.RenderTransform>
+                        <Image.Triggers>
+                            <EventTrigger RoutedEvent="Image.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                                        <DoubleAnimation Storyboard.TargetProperty="(Image.RenderTransform).(ScaleTransform.ScaleX)" From="1" To="1.15" Duration="0:0:1.5"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="(Image.RenderTransform).(ScaleTransform.ScaleY)" From="1" To="1.15" Duration="0:0:1.5"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Image.Triggers>
+                    </Image>
+                    <TextBlock Text="DrillView Alarm Log Analyzer" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" FontSize="16" Margin="8,0,0,0"/>
+                </StackPanel>
+                </Grid>
 
-        <!-- Main content -->
-        <ScrollViewer>
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20">
-                <TextBlock Text="Select Database Mode:" Margin="0 10 0 5" FontSize="14" />
-                <ComboBox x:Name="comboDbMode" Width="250" Margin="0 0 0 10" SelectionChanged="comboDbMode_SelectionChanged">
-                    <ComboBoxItem Content="SQL Server" />
-                    <ComboBoxItem Content="SQLite" />
+                <!-- Кнопки -->
+                <StackPanel Orientation="Horizontal" Grid.Column="1">
+                    <Button Style="{StaticResource MaterialDesignToolForegroundButton}" Click="Minimize_Click" Width="40" Height="40" ToolTip="Minimize">
+                        <materialDesign:PackIcon Kind="WindowMinimize"/>
+                    </Button>
+                    <Button Style="{StaticResource MaterialDesignToolForegroundButton}" Click="MaximizeRestore_Click" Width="40" Height="40" ToolTip="Maximize/Restore">
+                        <materialDesign:PackIcon Kind="WindowRestore"/>
+                    </Button>
+                    <Button Style="{StaticResource MaterialDesignToolForegroundButton}" Click="Close_Click" Width="40" Height="40" ToolTip="Close">
+                        <materialDesign:PackIcon Kind="Close"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Основное содержимое -->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,60,0,40">
+            <TextBlock Text="Select Database Mode:" Margin="0 10 0 5" FontSize="14" Foreground="White"/>
+            <ComboBox x:Name="comboDbMode" Width="250" Margin="0 0 0 10" SelectionChanged="comboDbMode_SelectionChanged">
+                <ComboBoxItem Content="SQL Server"/>
+                <ComboBoxItem Content="SQLite"/>
+            </ComboBox>
+
+            <StackPanel x:Name="sqlServerPanel">
+                <TextBlock Text="Authentication Mode:" Margin="0 10 0 5" FontSize="14" Foreground="White"/>
+                <ComboBox x:Name="comboAuthMode" Width="250" SelectionChanged="comboAuthMode_SelectionChanged">
+                    <ComboBoxItem Content="Trusted Connection"/>
+                    <ComboBoxItem Content="SQL Authentication"/>
                 </ComboBox>
 
-                <StackPanel x:Name="sqlServerPanel">
-                    <TextBlock Text="Authentication Mode:" Margin="0 10 0 5" FontSize="14" />
-                    <ComboBox x:Name="comboAuthMode" Width="250" SelectionChanged="comboAuthMode_SelectionChanged">
-                        <ComboBoxItem Content="Trusted Connection" />
-                        <ComboBoxItem Content="SQL Authentication" />
-                    </ComboBox>
+                <TextBlock Text="Enter Remote Server Name:" Margin="0 10 0 5" FontSize="14" Foreground="White"/>
+                <TextBox x:Name="txtServerName" Width="300" Height="30" materialDesign:HintAssist.Hint="localhost\YourServerName"/>
 
-                    <TextBlock Text="Enter Remote Server Name:" Margin="0 10 0 5" FontSize="14" />
-                    <TextBox x:Name="txtServerName" Width="300" Height="30" materialDesign:HintAssist.Hint="localhost\YourServerName"/>
-
-                    <StackPanel x:Name="sqlAuthFields" Visibility="Collapsed">
-                        <TextBlock Text="Username:" Margin="0 10 0 5" FontSize="14" />
-                        <TextBox x:Name="txtLogin" Width="300" />
-                        <TextBlock Text="Password:" Margin="0 10 0 5" FontSize="14" />
-                        <PasswordBox x:Name="txtPassword" Width="300" />
-                    </StackPanel>
-
-                    <Button Content="Connect to Server"
-                            Width="240"
-                            Style="{StaticResource AnimatedRaisedButton}"
-                            Click="btnConnect_Click"
-                            Margin="0 20 0 10" />
+                <StackPanel x:Name="sqlAuthFields" Visibility="Collapsed">
+                    <TextBlock Text="Username:" Margin="0 10 0 5" FontSize="14" Foreground="White"/>
+                    <TextBox x:Name="txtLogin" Width="300"/>
+                    <TextBlock Text="Password:" Margin="0 10 0 5" FontSize="14" Foreground="White"/>
+                    <PasswordBox x:Name="txtPassword" Width="300"/>
                 </StackPanel>
 
-                <Button x:Name="btnManageDatabases"
-                        Content="Manage Databases"
-                        Width="240"
-                        Click="btnManageDatabases_Click"
-                        IsEnabled="False"
-                        Style="{StaticResource AnimatedRaisedButton}"
-                        Margin="0 5" />
-
-                <Button Content="📊 Compare week by week"
-                        Width="240"
-                        Click="btnWeekComparison_Click"
-                        Style="{StaticResource AnimatedRaisedButton}"
-                        Margin="0 5" />
-
-                <Button Content="📅 Compare by date ranges"
-                        Width="240"
-                        Click="btnCompareByDateRange_Click"
-                        Style="{StaticResource AnimatedRaisedButton}"
-                        Margin="0 5" />
-
-                <Button Content="Table view by date"
-                        Width="240"
-                        Click="btnOpenTableDateRange_Click"
-                        Style="{StaticResource AnimatedRaisedButton}"
-                        Margin="0 5" />
-
-                <Button Content="❌ Exit"
-                        Width="240"
-                        Click="Close_Click"
-                        Style="{StaticResource AnimatedRaisedButton}"
-                        Margin="0 20 0 0" />
+                <Button Content="Connect to Server" Width="240" Style="{StaticResource AnimatedRaisedButton}" Click="btnConnect_Click" Margin="0 20 0 10"/>
             </StackPanel>
-        </ScrollViewer>
-    </DockPanel>
+
+            <Button x:Name="btnManageDatabases" Content="Manage Databases" Width="240" Click="btnManageDatabases_Click"
+                    IsEnabled="False" Style="{StaticResource AnimatedRaisedButton}" Margin="0 5"/>
+
+            <Button Content="📊 Compare week by week" Width="240" Click="btnWeekComparison_Click"
+                    Style="{StaticResource AnimatedRaisedButton}" Margin="0 5"/>
+
+            <Button Content="📅 Compare by date ranges" Width="240" Click="btnCompareByDateRange_Click"
+                    Style="{StaticResource AnimatedRaisedButton}" Margin="0 5"/>
+
+            <Button Content="Table view by date" Width="240" Click="btnOpenTableDateRange_Click"
+                    Style="{StaticResource AnimatedRaisedButton}" Margin="0 5"/>
+
+            <Button Content="❌ Exit" Width="240" Click="Close_Click" Style="{StaticResource AnimatedRaisedButton}" Margin="0 20 0 0"/>
+        </StackPanel>
+
+        <!-- Название базы -->
+        <TextBlock x:Name="SelectedDbText" Foreground="#00FFFF" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10"/>
+    </Grid>
 </local:MaterialDesignWindow>
