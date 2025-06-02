@@ -87,21 +87,17 @@ namespace LogAnalizerWpfClient
                     .Where(r =>
                     {
                         var msg = r.AlarmMessage;
-                        return selectedCategory switch
-                        {
-                            "DDM" => Regex.IsMatch(msg, @"^\s*DDM(?!.*\bDW\b)", RegexOptions.IgnoreCase),
-                            "DW" => Regex.IsMatch(msg, @"^\s*DW(?!.*\bDDM\b)", RegexOptions.IgnoreCase),
-                            "VPH" => Regex.IsMatch(msg, @"^\s*VPH", RegexOptions.IgnoreCase),
-                            "BRC" => Regex.IsMatch(msg, @"^\s*BRC", RegexOptions.IgnoreCase),
-                            "LGA" => Regex.IsMatch(msg, @"^\s*LGA", RegexOptions.IgnoreCase),
-                            "HRN" => Regex.IsMatch(msg, @"^\s*HRN", RegexOptions.IgnoreCase),
-                            "TFM" => Regex.IsMatch(msg, @"^\s*TFM", RegexOptions.IgnoreCase),
-                            "ELT" => Regex.IsMatch(msg, @"^\s*ELT", RegexOptions.IgnoreCase),
-                            "PDPH" => Regex.IsMatch(msg, @"^\s*PDPH", RegexOptions.IgnoreCase),
-                            "TD" => Regex.IsMatch(msg, @"^\s*TD", RegexOptions.IgnoreCase),
-                            
-                            _ => msg.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase)
-                        };
+                        if (string.IsNullOrWhiteSpace(msg))
+                            return false;
+
+                        // Строгая проверка только для DDM и DW
+                        if (selectedCategory == "DDM")
+                            return msg.Contains("DDM", StringComparison.OrdinalIgnoreCase)
+                                   && !Regex.IsMatch(msg, @"^\s*DW", RegexOptions.IgnoreCase);
+                    
+
+                        // Для всех остальных — обычное Contains
+                        return msg.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase);
                     })
                     .Where(r =>
                         selectedCategory != "DW" || 

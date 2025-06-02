@@ -170,7 +170,7 @@ public async Task ImportLogsAsync(string filePath, LogWeekType weekType)
             {
                 "CRI_B", "CRI_C", "CRI_A", "FAULT",
                 "SYS_A", "SYS_B", "SYS_C",
-                "WRN", "WRN_A", "WRN_B", "WRN_C"
+                "WRN", "WRN_A", "WRN_B", "WRN_C","B","C"
             };
             
             var week1Groups = await _context.AlarmLogs
