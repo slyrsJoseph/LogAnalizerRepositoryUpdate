@@ -25,7 +25,10 @@ namespace LogAnalizerWpfClient
         private readonly List<ComparisonResult> _results;
         private readonly string _week1Label;
         private readonly string _week2Label;
-        private System.Timers.Timer _filterDelayTimer;
+        private System.Timers.Timer _filterTimerCategory;
+        private System.Timers.Timer _filterTimerSubFilter;
+        private bool _initialInputInProgress = false;
+
         public PlotModel PlotModel { get; private set; }
 
         public ChartDateTimeComparisonWindow(List<ComparisonResult> results, string week1Label, string week2Label)
@@ -36,13 +39,35 @@ namespace LogAnalizerWpfClient
             _week1Label = week1Label;
             _week2Label = week2Label;
 
+            _filterTimerCategory = new System.Timers.Timer(500);
+            _filterTimerCategory.AutoReset = false;
+            _filterTimerCategory.Elapsed += (s, e) =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    _initialInputInProgress = false;
+                    RefreshChart();
+                });
+            };
+
+            _filterTimerSubFilter = new System.Timers.Timer(1200);
+            _filterTimerSubFilter.AutoReset = false;
+            _filterTimerSubFilter.Elapsed += (s, e) =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    _initialInputInProgress = false;
+                    RefreshChart();
+                });
+            };
+
             this.Title = $"Comparison: {_week1Label} vs {_week2Label}";
 
             comboReportType.ItemsSource = new List<string> { "Equipment Alarms" };
             comboReportType.SelectedIndex = 0;
 
             comboCategory.ItemsSource = new List<string>
-                { "VPH", "BRC", "LGA", "HRN", "DDM", "DW", "DW ADS" ,"DW VFD", "DW ZPS", "DW ECS" ,"TFM", "ELT", "PDPH","TD" };
+                { "VPH", "BRC", "LGA", "HRN", "DDM", "DW", "TFM", "ELT", "PDPH","TD" };
             comboCategory.SelectedIndex = -1;
         }
 
@@ -60,12 +85,22 @@ namespace LogAnalizerWpfClient
 
         private void comboCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RefreshChart();
+            if (_filterTimerCategory != null)
+            {
+                _initialInputInProgress = true;
+                _filterTimerCategory.Stop();
+                _filterTimerCategory.Start();
+            }
         }
 
         private void comboMinCount_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RefreshChart();
+            if (_filterTimerCategory != null)
+            {
+                _initialInputInProgress = true;
+                _filterTimerCategory.Stop();
+                _filterTimerCategory.Start();
+            }
         }
 
         private void RefreshChart()
@@ -83,35 +118,42 @@ namespace LogAnalizerWpfClient
 
                 var filteredResults = _results
                     .Where(r => !string.IsNullOrEmpty(r.AlarmMessage))
-                    // .Where(r => r.AlarmMessage.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase))
                     .Where(r =>
                     {
                         var msg = r.AlarmMessage;
                         if (string.IsNullOrWhiteSpace(msg))
                             return false;
 
-                        // Строгая проверка только для DDM и DW
                         if (selectedCategory == "DDM")
                             return msg.Contains("DDM", StringComparison.OrdinalIgnoreCase)
                                    && !Regex.IsMatch(msg, @"^\s*DW", RegexOptions.IgnoreCase);
-                    
 
-                        // Для всех остальных — обычное Contains
                         return msg.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase);
                     })
                     .Where(r =>
-                        selectedCategory != "DW" || 
-                        string.IsNullOrWhiteSpace(subFilter) ||
-                        r.AlarmMessage.Contains(subFilter, StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (selectedCategory != "DW")
+                            return true;
+
+                        if (string.IsNullOrWhiteSpace(subFilter))
+                            return true;
+
+                        var msg = r.AlarmMessage ?? "";
+                        msg = Regex.Replace(msg, @"\s+", " ").Trim();
+
+                        return Regex.IsMatch(msg, $@"^DW\s+{Regex.Escape(subFilter)}\b", RegexOptions.IgnoreCase);
+                    })
                     .Where(r => r.CountWeek1 > minCount || r.CountWeek2 > minCount)
                     .OrderByDescending(r => r.CountWeek1 + r.CountWeek2)
                     .ToList();
 
                 if (!filteredResults.Any())
                 {
+                    if (_initialInputInProgress || (selectedCategory == "DW" && subFilter.Length < 3))
+                        return;
+
                     MessageBox.Show("No data for selected category or filter.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                    
                     PlotModel = new PlotModel
                     {
                         Title = "Empty Chart",
@@ -123,7 +165,7 @@ namespace LogAnalizerWpfClient
                     return;
                 }
 
-                BuildChart(filteredResults); 
+                BuildChart(filteredResults);
             }
             catch (Exception ex)
             {
@@ -131,11 +173,14 @@ namespace LogAnalizerWpfClient
             }
         }
 
-      private void BuildChart(List<ComparisonResult> filteredResults)
+    private void BuildChart(List<ComparisonResult> filteredResults)
 {
+    
+    string selectedCategory = comboCategory.SelectedItem?.ToString() ?? "";
+    
     var model = new PlotModel
     {
-        Title = $"Comparison: {_week1Label} vs {_week2Label}",
+        Title = $"{selectedCategory} - Comparison: {_week1Label} vs {_week2Label}",
         TextColor = OxyColors.Cyan,
         PlotAreaBorderColor = OxyColors.Transparent,
         Background = OxyColors.Black
@@ -155,12 +200,34 @@ namespace LogAnalizerWpfClient
         Position = AxisPosition.Bottom,
         TextColor = OxyColors.Cyan,
         TicklineColor = OxyColors.Cyan,
-        FontSize = 10,
-        GapWidth = 1
+        GapWidth = 1,
+        FontSize = filteredResults.Count < 5 ? 16 :
+            filteredResults.Count < 10 ? 13 :
+            filteredResults.Count < 20 ? 11 : 9,
     };
 
     foreach (var label in filteredResults.Select(r => WrapText(r.AlarmMessage, 25)))
         categoryAxis.Labels.Add(label);
+    
+    /*int maxValue = filteredResults
+        .SelectMany(r => new[] { r.CountWeek1, r.CountWeek2 })
+        .DefaultIfEmpty(0)
+        .Max();*/
+    
+    int max = filteredResults.Max(r => Math.Max(r.CountWeek1, r.CountWeek2));
+    
+    int step;
+    if (max < 20)
+        step = 10;
+    else if (max < 100)
+        step = 20;
+    else if (max < 1000)
+        step = 100;
+    else
+        step = 1000;
+
+    int maxValue = max + step;
+    
 
     var valueAxis = new LinearAxis
     {
@@ -169,6 +236,7 @@ namespace LogAnalizerWpfClient
         TitleColor = OxyColors.Cyan,
         TextColor = OxyColors.Cyan,
         Minimum = 0,
+        Maximum = maxValue,
         MajorGridlineStyle = LineStyle.Solid,
         MajorGridlineColor = OxyColors.DarkSlateGray
     };
@@ -178,13 +246,13 @@ namespace LogAnalizerWpfClient
 
     var seriesWeek1 = new LogAnalizerWpfClient.CustomSeries.RectangleBarSeries
     {
-        Title = _week1Label,
+        Title = "Previous Week",
         FillColor = OxyColors.LightGray
     };
 
     var seriesWeek2 = new LogAnalizerWpfClient.CustomSeries.RectangleBarSeries
     {
-        Title = _week2Label,
+        Title = "Current Week",
         FillColor = OxyColors.SteelBlue
     };
 
@@ -195,6 +263,7 @@ namespace LogAnalizerWpfClient
         var week1 = filteredResults[i].CountWeek1;
         var week2 = filteredResults[i].CountWeek2;
 
+        // Week 1
         seriesWeek1.Items.Add(new RectangleBarItem
         {
             X0 = i - barWidth,
@@ -203,6 +272,7 @@ namespace LogAnalizerWpfClient
             Y1 = week1
         });
 
+        // Week 2
         seriesWeek2.Items.Add(new RectangleBarItem
         {
             X0 = i,
@@ -211,6 +281,7 @@ namespace LogAnalizerWpfClient
             Y1 = week2
         });
 
+        // Подпись над Week 1
         model.Annotations.Add(new TextAnnotation
         {
             Text = week1.ToString(),
@@ -221,6 +292,7 @@ namespace LogAnalizerWpfClient
             TextVerticalAlignment = OxyPlot.VerticalAlignment.Bottom
         });
 
+        // Подпись над Week 2
         model.Annotations.Add(new TextAnnotation
         {
             Text = week2.ToString(),
@@ -269,11 +341,11 @@ private string WrapText(string text, int maxLength)
       
 private void txtSubFilter_TextChanged(object sender, TextChangedEventArgs e)
 {
-          
-    if (_filterDelayTimer != null)
+    if (_filterTimerSubFilter != null)
     {
-        _filterDelayTimer.Stop();
-        _filterDelayTimer.Start();
+        _initialInputInProgress = true;
+        _filterTimerSubFilter.Stop();
+        _filterTimerSubFilter.Start();
     }
 }
       

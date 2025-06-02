@@ -30,7 +30,10 @@ namespace LogAnalizerWpfClient
         private readonly List<ComparisonResult> _results;
         private readonly LogWeekType _week1;
         private readonly LogWeekType _week2;
-        private System.Timers.Timer _filterDelayTimer;
+      //  private System.Timers.Timer _filterDelayTimer;
+        private bool _initialInputInProgress = false;
+        private System.Timers.Timer _filterTimerCategory;
+        private System.Timers.Timer _filterTimerSubFilter;
         
         public PlotModel PlotModel { get; private set; }
        
@@ -43,11 +46,26 @@ namespace LogAnalizerWpfClient
             
             
             
-            _filterDelayTimer = new System.Timers.Timer(500); 
-            _filterDelayTimer.AutoReset = false;
-            _filterDelayTimer.Elapsed += (s, e) =>
+            _filterTimerCategory = new System.Timers.Timer(500); 
+            _filterTimerCategory.AutoReset = false;
+            _filterTimerCategory.Elapsed += (s, e) =>
             {
-                Dispatcher.Invoke(RefreshChart);
+                Dispatcher.Invoke(() =>
+                {
+                    _initialInputInProgress = false;
+                    RefreshChart();
+                });
+            };
+
+            _filterTimerSubFilter = new System.Timers.Timer(1200); 
+            _filterTimerSubFilter.AutoReset = false;
+            _filterTimerSubFilter.Elapsed += (s, e) =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    _initialInputInProgress = false;
+                    RefreshChart();
+                });
             };
           
 
@@ -92,13 +110,23 @@ namespace LogAnalizerWpfClient
 
         private void comboCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RefreshChart();
+            if (_filterTimerCategory != null)
+            {
+                _initialInputInProgress = true;
+                _filterTimerCategory.Stop();
+                _filterTimerCategory.Start();
+            }
         }
         
         
         private void comboMinCount_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RefreshChart();
+            if (_filterTimerCategory != null)
+            {
+                _initialInputInProgress = true;
+                _filterTimerCategory.Stop();
+                _filterTimerCategory.Start();
+            }
         }
 
         
@@ -138,17 +166,36 @@ namespace LogAnalizerWpfClient
                         return msg.Contains(selectedCategory, StringComparison.OrdinalIgnoreCase);
                     })
                     
-                    .Where(r =>
+                    /*.Where(r =>
                         selectedCategory != "DW" || 
                         string.IsNullOrWhiteSpace(subFilter) ||
                         // r.AlarmMessage.Contains(subFilter, StringComparison.OrdinalIgnoreCase))
-                        Regex.IsMatch(r.AlarmMessage, $@"^\s*{Regex.Escape(subFilter)}\b", RegexOptions.IgnoreCase))
+                        Regex.IsMatch(r.AlarmMessage, $@"^\s*{Regex.Escape(subFilter)}\b", RegexOptions.IgnoreCase))*/
+                    .Where(r =>
+                    {
+                        if (selectedCategory != "DW")
+                            return true;
+
+                        if (string.IsNullOrWhiteSpace(subFilter))
+                            return true;
+
+                        var msg = r.AlarmMessage ?? "";
+                        msg = Regex.Replace(msg, @"\s+", " ").Trim();
+
+                        
+                        return Regex.IsMatch(msg, $@"^DW\s+{Regex.Escape(subFilter)}\b", RegexOptions.IgnoreCase);
+                    })
                     .Where(r => r.CountWeek1 > minCount || r.CountWeek2 > minCount)
                     .OrderByDescending(r => r.CountWeek1 + r.CountWeek2)
                     .ToList();
 
                 if (!filteredResults.Any())
                 {
+                    
+                    if (_initialInputInProgress)
+                        return;
+
+                    
                     MessageBox.Show("No data for selected category or filter.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
 
                     
@@ -346,11 +393,11 @@ namespace LogAnalizerWpfClient
 
         private void txtSubFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
-          
-            if (_filterDelayTimer != null)
+            if (_filterTimerSubFilter != null)
             {
-                _filterDelayTimer.Stop();
-                _filterDelayTimer.Start();
+                _initialInputInProgress = true;
+                _filterTimerSubFilter.Stop();
+                _filterTimerSubFilter.Start();
             }
         }
         

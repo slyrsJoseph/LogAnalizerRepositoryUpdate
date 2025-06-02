@@ -67,7 +67,7 @@ public async Task<ActionResult<List<ComparisonResult>>> CompareByDateRange([From
         {
             "CRI_B", "CRI_C", "CRI_A", "FAULT",
             "SYS_A", "SYS_B", "SYS_C",
-            "WRN", "WRN_A", "WRN_B", "WRN_C"
+            "WRN", "WRN_A", "WRN_B", "WRN_C","B","C"
         };
 
         var range1Logs = await context.AlarmLogs

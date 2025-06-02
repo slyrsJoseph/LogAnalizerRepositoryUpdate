@@ -9,8 +9,8 @@
                             Title="ChartWindow"
                             Height="900" Width="1800"
                             WindowStyle="None"
-                            AllowsTransparency="True"
-                            WindowState="Maximized"
+                           
+                            ResizeMode="CanResizeWithGrip"
                             Background="{DynamicResource MaterialDesignPaper}">
 
     <Window.Resources>
