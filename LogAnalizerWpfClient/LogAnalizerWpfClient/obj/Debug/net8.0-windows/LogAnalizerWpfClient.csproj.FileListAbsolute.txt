@@ -351,3 +351,5 @@ C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\L
 C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\LogAnalizerWpfClient_MarkupCompile.lref
 C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\App.baml
 C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ExportSqliteDialog.g.cs
+C:\Users\JosephOne\Desktop\Razar ActualVersionLA\ActualVersionLogAnalizer-main\LogAnalizerWpfClient\LogAnalizerWpfClient\obj\Debug\net8.0-windows\ExportSqliteDialog.baml

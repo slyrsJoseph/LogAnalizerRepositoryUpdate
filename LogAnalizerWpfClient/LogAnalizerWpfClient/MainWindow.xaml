@@ -148,6 +148,8 @@
 
             <Button x:Name="btnManageDatabases" Content="Manage Databases" Width="240" Click="btnManageDatabases_Click"
                     IsEnabled="False" Style="{StaticResource AnimatedRaisedButton}" Margin="0 5"/>
+            
+           
 
             <Button Content="📊 Compare week by week" Width="240" Click="btnWeekComparison_Click"
                     Style="{StaticResource AnimatedRaisedButton}" Margin="0 5"/>

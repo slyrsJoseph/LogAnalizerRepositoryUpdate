@@ -148,7 +148,43 @@ namespace LogAnalizerWpfClient
             => WindowState = WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
         private void Close_Click(object sender, RoutedEventArgs e) => Close();
         
-        
+        private async void btnExportToSqlServer_Click(object sender, RoutedEventArgs e)
+        {
+            if (_mode != DatabaseMode.Sqlite)
+            {
+                MessageBox.Show("Switch to SQLite mode to select database to export.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(SelectedDatabaseState.CurrentDatabaseName))
+            {
+                MessageBox.Show("No SQLite database selected.");
+                return;
+            }
+
+            var dialog = new ExportSqliteDialog(); // ← ты создашь это окно
+            if (dialog.ShowDialog() == true)
+            {
+                try
+                {
+                    var exportRequest = new SqliteExportRequest
+                    {
+                        SqliteFile = dialog.SqliteFilePath,
+                        TargetServer = dialog.Server,
+                        TargetDatabase = dialog.Database,
+                        Username = dialog.Username,
+                        Password = dialog.Password
+                    };
+
+                    var result = await _logApiClient.MigrateSqliteToSqlServerAsync(exportRequest);
+                    MessageBox.Show(result, "Export Result", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Export Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
         
         
     }

@@ -7,6 +7,7 @@ using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using EFCore.BulkExtensions;
 
 namespace LogAnalizerServer.Controllers
 {
@@ -361,8 +362,73 @@ namespace LogAnalizerServer.Controllers
         }
         
         
+        //////Databases EXPORT////////
+        ///
+        ///
+        /// 
         
-        
+      [HttpPost("migrate/sqlite-to-sqlserver")]
+public async Task<IActionResult> MigrateSqliteToSqlServer([FromBody] SqliteExportRequest request)
+{
+    try
+    {
+        if (string.IsNullOrWhiteSpace(request.SqliteFile) ||
+            string.IsNullOrWhiteSpace(request.TargetServer) ||
+            string.IsNullOrWhiteSpace(request.TargetDatabase))
+        {
+            return BadRequest("Missing required export parameters.");
+        }
+
+        var sqlitePath = Path.Combine(AppContext.BaseDirectory, "Databases", request.SqliteFile);
+
+        if (!System.IO.File.Exists(sqlitePath))
+            return BadRequest("SQLite database file not found.");
+
+        var sqliteConnString = $"Data Source={sqlitePath}";
+        var sqlServerConnString =
+            $"Server={request.TargetServer};Database={request.TargetDatabase};User Id={request.Username};Password={request.Password};TrustServerCertificate=True;";
+
+        using var sqliteConnection = new Microsoft.Data.Sqlite.SqliteConnection(sqliteConnString);
+        using var sqlConnection = new Microsoft.Data.SqlClient.SqlConnection(sqlServerConnString);
+
+        await sqliteConnection.OpenAsync();
+        await sqlConnection.OpenAsync();
+
+        var command = sqliteConnection.CreateCommand();
+        command.CommandText = "SELECT * FROM AlarmLogs";
+        using var reader = await command.ExecuteReaderAsync();
+
+        var inserted = 0;
+
+        while (await reader.ReadAsync())
+        {
+            var insertCommand = sqlConnection.CreateCommand();
+            insertCommand.CommandText = @"
+                INSERT INTO AlarmLogs (AlarmId, AlarmClass, Resource, LoggedBy, Reference, PrevState, LogAction, FinalState, AlarmMessage, GenerationTime)
+                VALUES (@AlarmId, @AlarmClass, @Resource, @LoggedBy, @Reference, @PrevState, @LogAction, @FinalState, @AlarmMessage, @GenerationTime)";
+
+            insertCommand.Parameters.AddWithValue("@AlarmId", reader["AlarmId"]);
+            insertCommand.Parameters.AddWithValue("@AlarmClass", reader["AlarmClass"]);
+            insertCommand.Parameters.AddWithValue("@Resource", reader["Resource"]);
+            insertCommand.Parameters.AddWithValue("@LoggedBy", reader["LoggedBy"]);
+            insertCommand.Parameters.AddWithValue("@Reference", reader["Reference"]);
+            insertCommand.Parameters.AddWithValue("@PrevState", reader["PrevState"]);
+            insertCommand.Parameters.AddWithValue("@LogAction", reader["LogAction"]);
+            insertCommand.Parameters.AddWithValue("@FinalState", reader["FinalState"]);
+            insertCommand.Parameters.AddWithValue("@AlarmMessage", reader["AlarmMessage"]);
+            insertCommand.Parameters.AddWithValue("@GenerationTime", reader["GenerationTime"]);
+
+            await insertCommand.ExecuteNonQueryAsync();
+            inserted++;
+        }
+
+        return Ok($"Export completed: {inserted} alarms copied.");
+    }
+    catch (Exception ex)
+    {
+        return BadRequest($"Export error: {ex.Message}");
+    }
+}
         
         
     }

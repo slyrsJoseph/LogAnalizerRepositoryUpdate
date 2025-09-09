@@ -199,5 +199,9 @@ namespace LogAnalizerWpfClient
         }
         
         
+       
+        
+        
+        
     }
 }

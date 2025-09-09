@@ -50,13 +50,14 @@ public async Task ImportLogsAsync(string filePath, LogWeekType weekType)
             continue;
 
         string[] fields = ParseCsvLine(line);
-        if (fields.Length != 15)
+        // if (fields.Length != 15)
+        if (fields.Length != 14 && fields.Length != 15)
         {
-            _logger.LogWarning($"Line {lineNumber} has unexpected format");
+            _logger.LogWarning($"Line {lineNumber} has unexpected format (fields={fields.Length})");
             continue;
         }
 
-        try
+        /*try
         {
             var alarmLog = new AlarmLog
             {
@@ -74,7 +75,42 @@ public async Task ImportLogsAsync(string filePath, LogWeekType weekType)
                 AlarmMessage = fields[11],
                 GenerationTime = DateTime.Parse(fields[12]),
                 GenerationTimeUtc = DateTime.Parse(fields[13]),
-                Project = fields[14],
+               // Project = fields[14],
+                WeekType = weekType
+            };
+
+            logsToAdd.Add(alarmLog);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning($"Line {lineNumber} has invalid data: {ex.Message}");
+        }
+    }*/
+        try
+        {
+            // Take Project if exist , otherwise setting safe default option
+            // 
+            string projectValue = (fields.Length == 15 && !string.IsNullOrWhiteSpace(fields[14]))
+                ? fields[14]
+                : "N/A"; // default for new format (without the Project column)
+
+            var alarmLog = new AlarmLog
+            {
+                TimeWhenLogged = DateTime.Parse(fields[0]),
+                LocalZoneTime = DateTime.Parse(fields[1]),
+                SequenceNumber = long.Parse(fields[2]),
+                AlarmId = fields[3],
+                AlarmClass = fields[4],
+                Resource = fields[5],
+                LoggedBy = fields[6],
+                Reference = fields[7],
+                PrevState = fields[8],
+                LogAction = fields[9],
+                FinalState = fields[10],
+                AlarmMessage = fields[11],
+                GenerationTime = DateTime.Parse(fields[12]),
+                GenerationTimeUtc = DateTime.Parse(fields[13]),
+                Project = projectValue, // always not null
                 WeekType = weekType
             };
 

@@ -168,4 +168,19 @@ public class LogApiClient
     
     
     
+    /////////Database Export
+    ///
+    ///
+    ///
+    ///
+    /// 
+    public async Task<string> MigrateSqliteToSqlServerAsync(SqliteExportRequest request)
+    {
+        var response = await _httpClient.PostAsJsonAsync("api/database/migrate/sqlite-to-sqlserver", request);
+        response.EnsureSuccessStatusCode();
+        return await response.Content.ReadAsStringAsync();
+    }
+    
+    
+    
 }
