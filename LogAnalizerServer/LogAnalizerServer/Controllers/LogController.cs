@@ -17,13 +17,19 @@ public class LogController : ControllerBase
     }
 
    
-    [HttpPost("import")]
+    /*[HttpPost("import")]
     public async Task<IActionResult> ImportLogs([FromQuery] string filePath, [FromQuery] LogWeekType weekType)
     {
         await _logService.ImportLogsAsync(filePath, weekType);
         return Ok("Import finished successful.");
-    }
+    }*/
 
+    [HttpPost("import")]
+    public async Task<IActionResult> ImportLogs([FromQuery] string filePath, [FromQuery] LogWeekType weekType)
+    {
+        var msg = await _logService.ImportLogsAsync(filePath, weekType);
+        return Ok(msg);
+    }
  
     [HttpGet("compare/result")]
     public async Task<IActionResult> CompareAndReturnResult([FromQuery] LogWeekType week1,

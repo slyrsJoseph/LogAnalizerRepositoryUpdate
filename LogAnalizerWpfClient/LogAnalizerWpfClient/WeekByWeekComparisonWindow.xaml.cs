@@ -156,8 +156,10 @@ namespace LogAnalizerWpfClient
             {
                 try
                 {
-                    await _logApiClient.ImportLogsAsync(ofd.FileName, _selectedWeekForImport.Value);
-                    MessageBox.Show($"{_selectedWeekForImport.Value} logs imported!", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
+                    /*await _logApiClient.ImportLogsAsync(ofd.FileName, _selectedWeekForImport.Value);
+                    MessageBox.Show($"{_selectedWeekForImport.Value} logs imported!", "OK", MessageBoxButton.OK, MessageBoxImage.Information);*/
+                   var result = await _logApiClient.ImportLogsAsync(ofd.FileName, _selectedWeekForImport.Value);
+                    MessageBox.Show(result, "OK", MessageBoxButton.OK, MessageBoxImage.Information);
                     LoadWeeks();
                 }
                 catch (Exception ex)

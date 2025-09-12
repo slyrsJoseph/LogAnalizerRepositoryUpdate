@@ -26,12 +26,23 @@ public class LogApiClient
         _httpClient = httpClient;
     }
 
-    public async Task ImportLogsAsync(string filePath, LogWeekType weekType)
+    /*public async Task ImportLogsAsync(string filePath, LogWeekType weekType)
     {
         var response = await _httpClient.PostAsync(
             $"api/log/import?filePath={Uri.EscapeDataString(filePath)}&weekType={weekType}", null);
 
         response.EnsureSuccessStatusCode();
+    }*/
+    
+    public async Task<string> ImportLogsAsync(string filePath, LogWeekType weekType)
+    {
+        var response = await _httpClient.PostAsync(
+            $"api/log/import?filePath={Uri.EscapeDataString(filePath)}&weekType={weekType}", null);
+
+        response.EnsureSuccessStatusCode();
+
+        // читаем текстовое сообщение с сервера
+        return await response.Content.ReadAsStringAsync();
     }
 
    

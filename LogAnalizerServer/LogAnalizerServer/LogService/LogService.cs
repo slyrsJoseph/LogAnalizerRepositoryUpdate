@@ -26,8 +26,198 @@ namespace LogAnalizerServer
         }
         
        
+/*public async Task ImportLogsAsync(string filePath, LogWeekType weekType)
+{
+    using var stream = File.OpenRead(filePath);
+    using var reader = new StreamReader(stream);
 
-public async Task ImportLogsAsync(string filePath, LogWeekType weekType)
+    string headerLine = await reader.ReadLineAsync();
+    if (headerLine == null)
+    {
+        _logger.LogWarning("ImportLogsAsync: File Empty.");
+        return;
+    }
+
+    int lineNumber = 1;
+    string line;
+    var logsToAdd = new List<AlarmLog>();
+
+    bool anyWithProject = false;      
+    bool anyWithoutProject = false;   
+
+    while ((line = await reader.ReadLineAsync()) != null)
+    {
+        lineNumber++;
+        if (string.IsNullOrWhiteSpace(line))
+            continue;
+
+        string[] fields = ParseCsvLine(line);
+
+        if (fields.Length != 14 && fields.Length != 15)
+        {
+            _logger.LogWarning($"Line {lineNumber} has unexpected format (fields={fields.Length})");
+            continue;
+        }
+
+        try
+        {
+            if (fields.Length == 15) anyWithProject = true;
+            if (fields.Length == 14) anyWithoutProject = true;
+
+            string projectValue = (fields.Length == 15 && !string.IsNullOrWhiteSpace(fields[14]))
+                ? fields[14]
+                : "N/A";
+
+            var alarmLog = new AlarmLog
+            {
+                TimeWhenLogged    = DateTime.Parse(fields[0]),
+                LocalZoneTime     = DateTime.Parse(fields[1]),
+                SequenceNumber    = long.Parse(fields[2]),
+                AlarmId           = fields[3],
+                AlarmClass        = fields[4],
+                Resource          = fields[5],
+                LoggedBy          = fields[6],
+                Reference         = fields[7],
+                PrevState         = fields[8],
+                LogAction         = fields[9],
+                FinalState        = fields[10],
+                AlarmMessage      = fields[11],
+                GenerationTime    = DateTime.Parse(fields[12]),
+                GenerationTimeUtc = DateTime.Parse(fields[13]),
+                Project           = projectValue,
+                WeekType          = weekType
+            };
+
+            logsToAdd.Add(alarmLog);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning($"Line {lineNumber} has invalid data: {ex.Message}");
+        }
+    }
+
+    if (logsToAdd.Any())
+    {
+        await _context.AlarmLogs.Where(log => log.WeekType == weekType).BatchDeleteAsync();
+        _logger.LogInformation($"Old logs *By weeks* deleted {weekType}");
+
+        if (DatabaseConnectionManager.CurrentMode == DatabaseMode.Sqlite)
+        {
+            int nextId = _context.AlarmLogs.Any() ? _context.AlarmLogs.Max(x => x.Id) + 1 : 1;
+            foreach (var log in logsToAdd) log.Id = nextId++;
+        }
+
+        await _context.BulkInsertAsync(logsToAdd);
+
+       
+        if (anyWithProject && !anyWithoutProject)
+            _logger.LogInformation($"Imported {logsToAdd.Count} logs for {weekType} (with Project).");
+        else if (!anyWithProject && anyWithoutProject)
+            _logger.LogInformation($"Week {weekType} logs imported w/o \"Project\". Count={logsToAdd.Count}");
+        else
+            _logger.LogInformation($"Imported {logsToAdd.Count} logs for {weekType} (mixed: some with/without Project).");
+    }
+}*/
+public async Task<string> ImportLogsAsync(string filePath, LogWeekType weekType)
+{
+    using var stream = File.OpenRead(filePath);
+    using var reader = new StreamReader(stream);
+
+    string headerLine = await reader.ReadLineAsync();
+    if (headerLine == null)
+    {
+        _logger.LogWarning("ImportLogsAsync: File Empty.");
+        return $"No logs imported for {weekType}.";
+    }
+
+    int lineNumber = 1;
+    string line;
+    var logsToAdd = new List<AlarmLog>();
+
+    bool anyWithProject = false;
+    bool anyWithoutProject = false;
+
+    while ((line = await reader.ReadLineAsync()) != null)
+    {
+        lineNumber++;
+        if (string.IsNullOrWhiteSpace(line))
+            continue;
+
+        string[] fields = ParseCsvLine(line);
+        if (fields.Length != 14 && fields.Length != 15)
+        {
+            _logger.LogWarning($"Line {lineNumber} has unexpected format (fields={fields.Length})");
+            continue;
+        }
+
+        try
+        {
+            if (fields.Length == 15) anyWithProject = true;
+            if (fields.Length == 14) anyWithoutProject = true;
+
+            string projectValue = (fields.Length == 15 && !string.IsNullOrWhiteSpace(fields[14]))
+                ? fields[14]
+                : "N/A";
+
+            var alarmLog = new AlarmLog
+            {
+                TimeWhenLogged    = DateTime.Parse(fields[0]),
+                LocalZoneTime     = DateTime.Parse(fields[1]),
+                SequenceNumber    = long.Parse(fields[2]),
+                AlarmId           = fields[3],
+                AlarmClass        = fields[4],
+                Resource          = fields[5],
+                LoggedBy          = fields[6],
+                Reference         = fields[7],
+                PrevState         = fields[8],
+                LogAction         = fields[9],
+                FinalState        = fields[10],
+                AlarmMessage      = fields[11],
+                GenerationTime    = DateTime.Parse(fields[12]),
+                GenerationTimeUtc = DateTime.Parse(fields[13]),
+                Project           = projectValue,
+                WeekType          = weekType
+            };
+
+            logsToAdd.Add(alarmLog);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning($"Line {lineNumber} has invalid data: {ex.Message}");
+        }
+    }
+
+    if (!logsToAdd.Any())
+        return $"No logs imported for {weekType}.";
+
+    await _context.AlarmLogs
+        .Where(log => log.WeekType == weekType)
+        .BatchDeleteAsync();
+
+    _logger.LogInformation($"Old logs *By weeks* deleted {weekType}");
+
+    if (DatabaseConnectionManager.CurrentMode == DatabaseMode.Sqlite)
+    {
+        int nextId = _context.AlarmLogs.Any() ? _context.AlarmLogs.Max(x => x.Id) + 1 : 1;
+        foreach (var log in logsToAdd) log.Id = nextId++;
+    }
+
+    await _context.BulkInsertAsync(logsToAdd);
+
+    string msg;
+    if (anyWithProject && !anyWithoutProject)
+        msg = $"{weekType} logs imported!";
+    else if (!anyWithProject && anyWithoutProject)
+        msg = $"Week {weekType} logs imported w/o \"Project\"! (Count={logsToAdd.Count})";
+    else
+        msg = $"{weekType} logs imported (mixed format: some rows w/o \"Project\").";
+
+    _logger.LogInformation(msg);
+    return msg;
+}
+        
+        
+/*public async Task ImportLogsAsync(string filePath, LogWeekType weekType)
 {
     using var stream = File.OpenRead(filePath);
     using var reader = new StreamReader(stream);
@@ -57,35 +247,7 @@ public async Task ImportLogsAsync(string filePath, LogWeekType weekType)
             continue;
         }
 
-        /*try
-        {
-            var alarmLog = new AlarmLog
-            {
-                TimeWhenLogged = DateTime.Parse(fields[0]),
-                LocalZoneTime = DateTime.Parse(fields[1]),
-                SequenceNumber = long.Parse(fields[2]),
-                AlarmId = fields[3],
-                AlarmClass = fields[4],
-                Resource = fields[5],
-                LoggedBy = fields[6],
-                Reference = fields[7],
-                PrevState = fields[8],
-                LogAction = fields[9],
-                FinalState = fields[10],
-                AlarmMessage = fields[11],
-                GenerationTime = DateTime.Parse(fields[12]),
-                GenerationTimeUtc = DateTime.Parse(fields[13]),
-               // Project = fields[14],
-                WeekType = weekType
-            };
-
-            logsToAdd.Add(alarmLog);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogWarning($"Line {lineNumber} has invalid data: {ex.Message}");
-        }
-    }*/
+        
         try
         {
             // Take Project if exist , otherwise setting safe default option
@@ -151,7 +313,7 @@ public async Task ImportLogsAsync(string filePath, LogWeekType weekType)
         await _context.BulkInsertAsync(logsToAdd);
         _logger.LogInformation($"Imported {logsToAdd.Count} logs by BulkInsert.");
     }
-}
+}*/
 
 
         private string[] ParseCsvLine(string line)
